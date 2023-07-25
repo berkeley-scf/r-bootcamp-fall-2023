@@ -1,7 +1,7 @@
 # r-bootcamp-fall-2023
 UC Berkeley R Bootcamp, August 2023
 
-This is the website for the tenth annual R bootcamp at Berkeley. The bootcamp will be an intensive two-day introduction to R using RStudio, held all day on Saturday August 19 and Sunday August 20, 2023.
+This is the website for the 11th annual R bootcamp at Berkeley. The bootcamp will be an intensive two-day introduction to R using RStudio, held all day on Saturday August 19 and Sunday August 20, 2023.
 
 See below for information on:
   - [workshop schedule and links to the modules](schedule)
@@ -32,7 +32,7 @@ The workshop doesn't assume any specific R knowledge and starts from the very ba
 
 In prior years, we've had two tracks, with one track serving to provide a slower pace for those with no experience with R or other programming languages. Unfortunately, this year we do not have staffing to support two tracks.
 
-If you have no R experience and little programming experience in other languages, **you are likely to find the pace too quick**. Therefore we recommend that you attend one of the [D-Lab](https://dlab.berkeley.edu)'s R Fundamentals workshops. In particular there will likely be [a workshop the week of August 14 [TBD]](https://dlab.berkeley.edu/events/r-fundamentals-parts-1-4/2023-08-14) (the week before classes start) as well as workshops later in the semester. 
+If you have no R experience and little programming experience in other languages, **you are likely to find the pace too quick**. Therefore we recommend that you attend one of the [D-Lab](https://dlab.berkeley.edu)'s R Fundamentals workshops. In particular there is [a workshop the week of August 14 [TBD]](https://dlab.berkeley.edu/events/r-fundamentals-parts-1-4/2023-08-14) (the week before classes start) as well as workshops later in the semester. 
 
 ## Registration
 
@@ -62,7 +62,7 @@ You will probably want to [make sure you can use the campus WiFi (EduRoam)](http
 
 ### Schedule
 
-The [schedule for the bootcamp [UNDER CONSTRUCTION]](schedule) including links to all the modules.
+The [schedule for the bootcamp](schedule) including links to all the modules.
 
 The schedule will be similar to [the schedule from 2022](https://berkeley-scf.github.io/r-bootcamp-fall-2022/schedule/).
 

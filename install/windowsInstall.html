@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title></title>
+<style type="text/css">
+body {
+  font-family: sans-serif;
+  max-width: 800px;
+  margin: auto;
+  padding: 1em;
+  line-height: 1.5;
+  box-sizing: border-box;
+}
+body, .footnotes, code { font-size: .9em; }
+li li { font-size: .95em; }
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+pre, img { max-width: 100%; }
+pre, pre:hover {
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+pre code {
+  display: block;
+  overflow-x: auto;
+}
+code { font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace; }
+:not(pre) > code, code[class] { background-color: #F8F8F8; }
+code.language-undefined, pre > code:not([class]) {
+  background-color: inherit;
+  border: 1px solid #eee;
+}
+table {
+  margin: auto;
+  border-top: 1px solid #666;
+}
+table thead th { border-bottom: 1px solid #ddd; }
+th, td { padding: 5px; }
+thead, tfoot, tr:nth-child(even) { background: #eee; }
+blockquote {
+  color: #666;
+  margin: 0;
+  padding-left: 1em;
+  border-left: 0.5em solid #eee;
+}
+hr, .footnotes::before { border: 1px dashed #ddd; }
+.frontmatter { text-align: center; }
+#TOC .numbered li { list-style: none; }
+#TOC .numbered { padding-left: 0; }
+#TOC .numbered ul { padding-left: 1em; }
+table, .body h2 { border-bottom: 1px solid #666; }
+.body .appendix, .appendix ~ h2 { border-bottom-style: dashed; }
+.footnote-ref a::before { content: "["; }
+.footnote-ref a::after { content: "]"; }
+.footnotes::before {
+  content: "";
+  display: block;
+  max-width: 20em;
+}
+
+@media print {
+  body {
+    font-size: 12pt;
+    max-width: 100%;
+  }
+  tr, img { page-break-inside: avoid; }
+}
+@media only screen and (min-width: 992px) {
+  pre { white-space: pre; }
+}
+</style>
+</head>
+<body>
+<div class="include-before">
+</div>
+<div class="frontmatter">
+<div class="title"><h1></h1></div>
+<div class="author"><h2></h2></div>
+<div class="date"><h3></h3></div>
+</div>
+<div class="body">
+<p>To install R:</p>
+<ul>
+<li>Download R 4.3.1 for Windows <a href="https://cran.r-project.org/bin/windows/base/R-4.3.1-win.exe">here</a></li>
+<li>Open the downloaded file (<code>R-4.3.1-win.exe</code>)</li>
+<li>Select <code>Run</code> if prompted</li>
+<li>Follow the set-up instructions (if unsure of something, leave the default settings)</li>
+</ul>
+<p>To install RStudio:</p>
+<ul>
+<li>Download RStudio from <a href="https://download1.rstudio.org/electron/windows/RStudio-2023.06.1-524.exe">the Posit website</a></li>
+<li>Open the downloaded file (RStudio-2023.06.1-524.exe)</li>
+<li>Select <code>Run</code> if prompted</li>
+<li>Follow the set-up instructions (if unsure of something, leave the default settings)</li>
+<li>Open RStudio (R will run automatically in the background)</li>
+<li>You may have to allow RStudio to run if prompted (depends on security settings and anti-virus software)</li>
+</ul>
+<p>To install R packages:</p>
+<ul>
+<li>Open RStudio</li>
+<li>Select <code>Packages</code> in the lower right pane containing the tabs <code>Files</code>, <code>Plots</code>, <code>Packages</code> , etc.</li>
+<li>Click <code>Install packages</code> (or use <code>install.packages()</code> from the command line)</li>
+</ul>
+<p>You may have to allow RStudio to make changes to computer if prompted (depends on security settings and anti-virus software)</p>
+</div>
+<div class="include-after">
+</div>
+</body>
+</html>

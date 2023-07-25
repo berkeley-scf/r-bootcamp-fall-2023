@@ -1,0 +1,23 @@
+To install R:
+
+-    Download R 4.3.1 for Windows [here](https://cran.r-project.org/bin/windows/base/R-4.3.1-win.exe)
+-    Open the downloaded file (`R-4.3.1-win.exe`)
+-    Select `Run` if prompted
+-    Follow the set-up instructions (if unsure of something, leave the default settings)
+
+To install RStudio:
+
+-    Download RStudio from [the Posit website](https://download1.rstudio.org/electron/windows/RStudio-2023.06.1-524.exe)
+-    Open the downloaded file (RStudio-2023.06.1-524.exe)
+-    Select `Run` if prompted
+-    Follow the set-up instructions (if unsure of something, leave the default settings)
+-    Open RStudio (R will run automatically in the background)
+-    You may have to allow RStudio to run if prompted (depends on security settings and anti-virus software)
+
+To install R packages:
+
+-    Open RStudio
+-    Select `Packages` in the lower right pane containing the tabs `Files`, `Plots`, `Packages` , etc. 
+-    Click `Install packages` (or use `install.packages()` from the command line)
+
+You may have to allow RStudio to make changes to computer if prompted (depends on security settings and anti-virus software) 

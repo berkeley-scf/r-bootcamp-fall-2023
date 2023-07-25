@@ -1,0 +1,1425 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<title>Lists</title>
+
+<script type="text/javascript">
+window.onload = function() {
+  var imgs = document.getElementsByTagName('img'), i, img;
+  for (i = 0; i < imgs.length; i++) {
+    img = imgs[i];
+    // center an image if it is the only element of its parent
+    if (img.parentElement.childElementCount === 1)
+      img.parentElement.style.textAlign = 'center';
+  }
+};
+</script>
+
+<!-- Styles for R syntax highlighter -->
+<style type="text/css">
+   pre .operator,
+   pre .paren {
+     color: rgb(104, 118, 135)
+   }
+
+   pre .literal {
+     color: #990073
+   }
+
+   pre .number {
+     color: #099;
+   }
+
+   pre .comment {
+     color: #998;
+     font-style: italic
+   }
+
+   pre .keyword {
+     color: #900;
+     font-weight: bold
+   }
+
+   pre .identifier {
+     color: rgb(0, 0, 0);
+   }
+
+   pre .string {
+     color: #d14;
+   }
+</style>
+
+<!-- R syntax highlighter -->
+<script type="text/javascript">
+var hljs=new function(){function m(p){return p.replace(/&/gm,"&amp;").replace(/</gm,"&lt;")}function f(r,q,p){return RegExp(q,"m"+(r.cI?"i":"")+(p?"g":""))}function b(r){for(var p=0;p<r.childNodes.length;p++){var q=r.childNodes[p];if(q.nodeName=="CODE"){return q}if(!(q.nodeType==3&&q.nodeValue.match(/\s+/))){break}}}function h(t,s){var p="";for(var r=0;r<t.childNodes.length;r++){if(t.childNodes[r].nodeType==3){var q=t.childNodes[r].nodeValue;if(s){q=q.replace(/\n/g,"")}p+=q}else{if(t.childNodes[r].nodeName=="BR"){p+="\n"}else{p+=h(t.childNodes[r])}}}if(/MSIE [678]/.test(navigator.userAgent)){p=p.replace(/\r/g,"\n")}return p}function a(s){var r=s.className.split(/\s+/);r=r.concat(s.parentNode.className.split(/\s+/));for(var q=0;q<r.length;q++){var p=r[q].replace(/^language-/,"");if(e[p]){return p}}}function c(q){var p=[];(function(s,t){for(var r=0;r<s.childNodes.length;r++){if(s.childNodes[r].nodeType==3){t+=s.childNodes[r].nodeValue.length}else{if(s.childNodes[r].nodeName=="BR"){t+=1}else{if(s.childNodes[r].nodeType==1){p.push({event:"start",offset:t,node:s.childNodes[r]});t=arguments.callee(s.childNodes[r],t);p.push({event:"stop",offset:t,node:s.childNodes[r]})}}}}return t})(q,0);return p}function k(y,w,x){var q=0;var z="";var s=[];function u(){if(y.length&&w.length){if(y[0].offset!=w[0].offset){return(y[0].offset<w[0].offset)?y:w}else{return w[0].event=="start"?y:w}}else{return y.length?y:w}}function t(D){var A="<"+D.nodeName.toLowerCase();for(var B=0;B<D.attributes.length;B++){var C=D.attributes[B];A+=" "+C.nodeName.toLowerCase();if(C.value!==undefined&&C.value!==false&&C.value!==null){A+='="'+m(C.value)+'"'}}return A+">"}while(y.length||w.length){var v=u().splice(0,1)[0];z+=m(x.substr(q,v.offset-q));q=v.offset;if(v.event=="start"){z+=t(v.node);s.push(v.node)}else{if(v.event=="stop"){var p,r=s.length;do{r--;p=s[r];z+=("</"+p.nodeName.toLowerCase()+">")}while(p!=v.node);s.splice(r,1);while(r<s.length){z+=t(s[r]);r++}}}}return z+m(x.substr(q))}function j(){function q(x,y,v){if(x.compiled){return}var u;var s=[];if(x.k){x.lR=f(y,x.l||hljs.IR,true);for(var w in x.k){if(!x.k.hasOwnProperty(w)){continue}if(x.k[w] instanceof Object){u=x.k[w]}else{u=x.k;w="keyword"}for(var r in u){if(!u.hasOwnProperty(r)){continue}x.k[r]=[w,u[r]];s.push(r)}}}if(!v){if(x.bWK){x.b="\\b("+s.join("|")+")\\s"}x.bR=f(y,x.b?x.b:"\\B|\\b");if(!x.e&&!x.eW){x.e="\\B|\\b"}if(x.e){x.eR=f(y,x.e)}}if(x.i){x.iR=f(y,x.i)}if(x.r===undefined){x.r=1}if(!x.c){x.c=[]}x.compiled=true;for(var t=0;t<x.c.length;t++){if(x.c[t]=="self"){x.c[t]=x}q(x.c[t],y,false)}if(x.starts){q(x.starts,y,false)}}for(var p in e){if(!e.hasOwnProperty(p)){continue}q(e[p].dM,e[p],true)}}function d(B,C){if(!j.called){j();j.called=true}function q(r,M){for(var L=0;L<M.c.length;L++){if((M.c[L].bR.exec(r)||[null])[0]==r){return M.c[L]}}}function v(L,r){if(D[L].e&&D[L].eR.test(r)){return 1}if(D[L].eW){var M=v(L-1,r);return M?M+1:0}return 0}function w(r,L){return L.i&&L.iR.test(r)}function K(N,O){var M=[];for(var L=0;L<N.c.length;L++){M.push(N.c[L].b)}var r=D.length-1;do{if(D[r].e){M.push(D[r].e)}r--}while(D[r+1].eW);if(N.i){M.push(N.i)}return f(O,M.join("|"),true)}function p(M,L){var N=D[D.length-1];if(!N.t){N.t=K(N,E)}N.t.lastIndex=L;var r=N.t.exec(M);return r?[M.substr(L,r.index-L),r[0],false]:[M.substr(L),"",true]}function z(N,r){var L=E.cI?r[0].toLowerCase():r[0];var M=N.k[L];if(M&&M instanceof Array){return M}return false}function F(L,P){L=m(L);if(!P.k){return L}var r="";var O=0;P.lR.lastIndex=0;var M=P.lR.exec(L);while(M){r+=L.substr(O,M.index-O);var N=z(P,M);if(N){x+=N[1];r+='<span class="'+N[0]+'">'+M[0]+"</span>"}else{r+=M[0]}O=P.lR.lastIndex;M=P.lR.exec(L)}return r+L.substr(O,L.length-O)}function J(L,M){if(M.sL&&e[M.sL]){var r=d(M.sL,L);x+=r.keyword_count;return r.value}else{return F(L,M)}}function I(M,r){var L=M.cN?'<span class="'+M.cN+'">':"";if(M.rB){y+=L;M.buffer=""}else{if(M.eB){y+=m(r)+L;M.buffer=""}else{y+=L;M.buffer=r}}D.push(M);A+=M.r}function G(N,M,Q){var R=D[D.length-1];if(Q){y+=J(R.buffer+N,R);return false}var P=q(M,R);if(P){y+=J(R.buffer+N,R);I(P,M);return P.rB}var L=v(D.length-1,M);if(L){var O=R.cN?"</span>":"";if(R.rE){y+=J(R.buffer+N,R)+O}else{if(R.eE){y+=J(R.buffer+N,R)+O+m(M)}else{y+=J(R.buffer+N+M,R)+O}}while(L>1){O=D[D.length-2].cN?"</span>":"";y+=O;L--;D.length--}var r=D[D.length-1];D.length--;D[D.length-1].buffer="";if(r.starts){I(r.starts,"")}return R.rE}if(w(M,R)){throw"Illegal"}}var E=e[B];var D=[E.dM];var A=0;var x=0;var y="";try{var s,u=0;E.dM.buffer="";do{s=p(C,u);var t=G(s[0],s[1],s[2]);u+=s[0].length;if(!t){u+=s[1].length}}while(!s[2]);if(D.length>1){throw"Illegal"}return{r:A,keyword_count:x,value:y}}catch(H){if(H=="Illegal"){return{r:0,keyword_count:0,value:m(C)}}else{throw H}}}function g(t){var p={keyword_count:0,r:0,value:m(t)};var r=p;for(var q in e){if(!e.hasOwnProperty(q)){continue}var s=d(q,t);s.language=q;if(s.keyword_count+s.r>r.keyword_count+r.r){r=s}if(s.keyword_count+s.r>p.keyword_count+p.r){r=p;p=s}}if(r.language){p.second_best=r}return p}function i(r,q,p){if(q){r=r.replace(/^((<[^>]+>|\t)+)/gm,function(t,w,v,u){return w.replace(/\t/g,q)})}if(p){r=r.replace(/\n/g,"<br>")}return r}function n(t,w,r){var x=h(t,r);var v=a(t);var y,s;if(v){y=d(v,x)}else{return}var q=c(t);if(q.length){s=document.createElement("pre");s.innerHTML=y.value;y.value=k(q,c(s),x)}y.value=i(y.value,w,r);var u=t.className;if(!u.match("(\\s|^)(language-)?"+v+"(\\s|$)")){u=u?(u+" "+v):v}if(/MSIE [678]/.test(navigator.userAgent)&&t.tagName=="CODE"&&t.parentNode.tagName=="PRE"){s=t.parentNode;var p=document.createElement("div");p.innerHTML="<pre><code>"+y.value+"</code></pre>";t=p.firstChild.firstChild;p.firstChild.cN=s.cN;s.parentNode.replaceChild(p.firstChild,s)}else{t.innerHTML=y.value}t.className=u;t.result={language:v,kw:y.keyword_count,re:y.r};if(y.second_best){t.second_best={language:y.second_best.language,kw:y.second_best.keyword_count,re:y.second_best.r}}}function o(){if(o.called){return}o.called=true;var r=document.getElementsByTagName("pre");for(var p=0;p<r.length;p++){var q=b(r[p]);if(q){n(q,hljs.tabReplace)}}}function l(){if(window.addEventListener){window.addEventListener("DOMContentLoaded",o,false);window.addEventListener("load",o,false)}else{if(window.attachEvent){window.attachEvent("onload",o)}else{window.onload=o}}}var e={};this.LANGUAGES=e;this.highlight=d;this.highlightAuto=g;this.fixMarkup=i;this.highlightBlock=n;this.initHighlighting=o;this.initHighlightingOnLoad=l;this.IR="[a-zA-Z][a-zA-Z0-9_]*";this.UIR="[a-zA-Z_][a-zA-Z0-9_]*";this.NR="\\b\\d+(\\.\\d+)?";this.CNR="\\b(0[xX][a-fA-F0-9]+|(\\d+(\\.\\d*)?|\\.\\d+)([eE][-+]?\\d+)?)";this.BNR="\\b(0b[01]+)";this.RSR="!|!=|!==|%|%=|&|&&|&=|\\*|\\*=|\\+|\\+=|,|\\.|-|-=|/|/=|:|;|<|<<|<<=|<=|=|==|===|>|>=|>>|>>=|>>>|>>>=|\\?|\\[|\\{|\\(|\\^|\\^=|\\||\\|=|\\|\\||~";this.ER="(?![\\s\\S])";this.BE={b:"\\\\.",r:0};this.ASM={cN:"string",b:"'",e:"'",i:"\\n",c:[this.BE],r:0};this.QSM={cN:"string",b:'"',e:'"',i:"\\n",c:[this.BE],r:0};this.CLCM={cN:"comment",b:"//",e:"$"};this.CBLCLM={cN:"comment",b:"/\\*",e:"\\*/"};this.HCM={cN:"comment",b:"#",e:"$"};this.NM={cN:"number",b:this.NR,r:0};this.CNM={cN:"number",b:this.CNR,r:0};this.BNM={cN:"number",b:this.BNR,r:0};this.inherit=function(r,s){var p={};for(var q in r){p[q]=r[q]}if(s){for(var q in s){p[q]=s[q]}}return p}}();hljs.LANGUAGES.cpp=function(){var a={keyword:{"false":1,"int":1,"float":1,"while":1,"private":1,"char":1,"catch":1,"export":1,virtual:1,operator:2,sizeof:2,dynamic_cast:2,typedef:2,const_cast:2,"const":1,struct:1,"for":1,static_cast:2,union:1,namespace:1,unsigned:1,"long":1,"throw":1,"volatile":2,"static":1,"protected":1,bool:1,template:1,mutable:1,"if":1,"public":1,friend:2,"do":1,"return":1,"goto":1,auto:1,"void":2,"enum":1,"else":1,"break":1,"new":1,extern:1,using:1,"true":1,"class":1,asm:1,"case":1,typeid:1,"short":1,reinterpret_cast:2,"default":1,"double":1,register:1,explicit:1,signed:1,typename:1,"try":1,"this":1,"switch":1,"continue":1,wchar_t:1,inline:1,"delete":1,alignof:1,char16_t:1,char32_t:1,constexpr:1,decltype:1,noexcept:1,nullptr:1,static_assert:1,thread_local:1,restrict:1,_Bool:1,complex:1},built_in:{std:1,string:1,cin:1,cout:1,cerr:1,clog:1,stringstream:1,istringstream:1,ostringstream:1,auto_ptr:1,deque:1,list:1,queue:1,stack:1,vector:1,map:1,set:1,bitset:1,multiset:1,multimap:1,unordered_set:1,unordered_map:1,unordered_multiset:1,unordered_multimap:1,array:1,shared_ptr:1}};return{dM:{k:a,i:"</",c:[hljs.CLCM,hljs.CBLCLM,hljs.QSM,{cN:"string",b:"'\\\\?.",e:"'",i:"."},{cN:"number",b:"\\b(\\d+(\\.\\d*)?|\\.\\d+)(u|U|l|L|ul|UL|f|F)"},hljs.CNM,{cN:"preprocessor",b:"#",e:"$"},{cN:"stl_container",b:"\\b(deque|list|queue|stack|vector|map|set|bitset|multiset|multimap|unordered_map|unordered_set|unordered_multiset|unordered_multimap|array)\\s*<",e:">",k:a,r:10,c:["self"]}]}}}();hljs.LANGUAGES.r={dM:{c:[hljs.HCM,{cN:"number",b:"\\b0[xX][0-9a-fA-F]+[Li]?\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\b\\d+(?:[eE][+\\-]?\\d*)?L\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\b\\d+\\.(?!\\d)(?:i\\b)?",e:hljs.IMMEDIATE_RE,r:1},{cN:"number",b:"\\b\\d+(?:\\.\\d*)?(?:[eE][+\\-]?\\d*)?i?\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\.\\d+(?:[eE][+\\-]?\\d*)?i?\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"keyword",b:"(?:tryCatch|library|setGeneric|setGroupGeneric)\\b",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\.\\.\\.",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\.\\.\\d+(?![\\w.])",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\b(?:function)",e:hljs.IMMEDIATE_RE,r:2},{cN:"keyword",b:"(?:if|in|break|next|repeat|else|for|return|switch|while|try|stop|warning|require|attach|detach|source|setMethod|setClass)\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"literal",b:"(?:NA|NA_integer_|NA_real_|NA_character_|NA_complex_)\\b",e:hljs.IMMEDIATE_RE,r:10},{cN:"literal",b:"(?:NULL|TRUE|FALSE|T|F|Inf|NaN)\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"identifier",b:"[a-zA-Z.][a-zA-Z0-9._]*\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"operator",b:"<\\-(?!\\s*\\d)",e:hljs.IMMEDIATE_RE,r:2},{cN:"operator",b:"\\->|<\\-",e:hljs.IMMEDIATE_RE,r:1},{cN:"operator",b:"%%|~",e:hljs.IMMEDIATE_RE},{cN:"operator",b:">=|<=|==|!=|\\|\\||&&|=|\\+|\\-|\\*|/|\\^|>|<|!|&|\\||\\$|:",e:hljs.IMMEDIATE_RE,r:0},{cN:"operator",b:"%",e:"%",i:"\\n",r:1},{cN:"identifier",b:"`",e:"`",r:0},{cN:"string",b:'"',e:'"',c:[hljs.BE],r:0},{cN:"string",b:"'",e:"'",c:[hljs.BE],r:0},{cN:"paren",b:"[[({\\])}]",e:hljs.IMMEDIATE_RE,r:0}]}};
+hljs.initHighlightingOnLoad();
+</script>
+
+<!-- MathJax scripts -->
+<script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 13px;
+}
+
+body {
+  max-width: 800px;
+  margin: auto;
+  padding: 1em;
+  line-height: 20px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 {
+   font-size:2.2em;
+}
+
+h2 {
+   font-size:1.8em;
+}
+
+h3 {
+   font-size:1.4em;
+}
+
+h4 {
+   font-size:1.0em;
+}
+
+h5 {
+   font-size:0.9em;
+}
+
+h6 {
+   font-size:0.8em;
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre, img {
+  max-width: 100%;
+}
+pre {
+  overflow-x: auto;
+}
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code {
+  font-size: 92%;
+  border: 1px solid #ccc;
+}
+
+code[class] {
+  background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * {
+      background: transparent !important;
+      color: black !important;
+      filter:none !important;
+      -ms-filter: none !important;
+   }
+
+   body {
+      font-size:12pt;
+      max-width:100%;
+   }
+
+   a, a:visited {
+      text-decoration: underline;
+   }
+
+   hr {
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote {
+      padding-right: 1em;
+      page-break-inside: avoid;
+   }
+
+   tr, img {
+      page-break-inside: avoid;
+   }
+
+   img {
+      max-width: 100% !important;
+   }
+
+   @page :left {
+      margin: 15mm 20mm 15mm 10mm;
+   }
+
+   @page :right {
+      margin: 15mm 10mm 15mm 20mm;
+   }
+
+   p, h2, h3 {
+      orphans: 3; widows: 3;
+   }
+
+   h2, h3 {
+      page-break-after: avoid;
+   }
+}
+</style>
+
+
+
+</head>
+
+<body>
+<h1>Lists</h1>
+
+<p>Collections of disparate or complicated objects</p>
+
+<pre><code class="r">myList &lt;- list(stuff = 3, mat = matrix(1:4, nrow = 2), 
+   moreStuff = c(&quot;china&quot;, &quot;japan&quot;), list(5, &quot;bear&quot;))
+myList
+</code></pre>
+
+<pre><code>## $stuff
+## [1] 3
+## 
+## $mat
+##      [,1] [,2]
+## [1,]    1    3
+## [2,]    2    4
+## 
+## $moreStuff
+## [1] &quot;china&quot; &quot;japan&quot;
+## 
+## [[4]]
+## [[4]][[1]]
+## [1] 5
+## 
+## [[4]][[2]]
+## [1] &quot;bear&quot;
+</code></pre>
+
+<pre><code class="r">myList[[3]] # result is not (usually) a list (unless you have nested lists)
+</code></pre>
+
+<pre><code>## [1] &quot;china&quot; &quot;japan&quot;
+</code></pre>
+
+<pre><code class="r">identical(myList[[3]], myList$moreStuff)
+</code></pre>
+
+<pre><code>## [1] TRUE
+</code></pre>
+
+<pre><code class="r">myList$moreStuff[2]
+</code></pre>
+
+<pre><code>## [1] &quot;japan&quot;
+</code></pre>
+
+<pre><code class="r">myList[[4]][[2]]
+</code></pre>
+
+<pre><code>## [1] &quot;bear&quot;
+</code></pre>
+
+<pre><code class="r">myList[1:3] # subset of a list is a list
+</code></pre>
+
+<pre><code>## $stuff
+## [1] 3
+## 
+## $mat
+##      [,1] [,2]
+## [1,]    1    3
+## [2,]    2    4
+## 
+## $moreStuff
+## [1] &quot;china&quot; &quot;japan&quot;
+</code></pre>
+
+<pre><code class="r">myList$newOne &lt;- &#39;more weird stuff&#39;
+names(myList)
+</code></pre>
+
+<pre><code>## [1] &quot;stuff&quot;     &quot;mat&quot;       &quot;moreStuff&quot; &quot;&quot;          &quot;newOne&quot;
+</code></pre>
+
+<p>Lists can be used as vectors of complicated objects. E.g., suppose you have a linear regression for each value of a stratifying variable. You could have a list of regression fits. Each regression fit will itself be a list, so you&#39;ll have a list of lists.</p>
+
+<h1>Lists: quick quiz</h1>
+
+<p><strong><a href="https://www.polleverywhere.com/multiple_choice_polls/n6adK1IU7niikhA2ZgLNi">P</a>OLL 3A</strong>: How would you extract &ldquo;china&rdquo; from this list?</p>
+
+<p>(respond at <a href="https://pollev.com/chrispaciorek428">https://pollev.com/chrispaciorek428</a>)</p>
+
+<pre><code>myList &lt;- list(stuff = 3, mat = matrix(1:4, nrow = 2), 
+   moreStuff = c(&quot;china&quot;, &quot;japan&quot;), list(5, &quot;bear&quot;))
+</code></pre>
+
+<p>1) myList$moreStuff[1]
+2) myList$moreStuff[[1]]
+3) myList[[1]]
+4) myList[[3]][2]
+5) myList[[3]][1]
+6) myList[3][1]
+7) myList[[&#39;moreStuff&#39;]][1]</p>
+
+<h1>Data frames</h1>
+
+<p>A review from Module 1&hellip;</p>
+
+<ul>
+<li>Data frames are combinations of vectors of the same length, but can be of different types</li>
+<li>Data frames are what is used for standard rectangular (record by field) datasets, similar to a spreadsheet</li>
+<li>Data frames are a functionality that both sets R aside from some languages (e.g., MATLAB) and provides functionality similar to some statistical packages (e.g., Stata, SAS)</li>
+</ul>
+
+<pre><code class="r">class(gapminder)
+</code></pre>
+
+<pre><code>## [1] &quot;tbl_df&quot;     &quot;tbl&quot;        &quot;data.frame&quot;
+</code></pre>
+
+<pre><code class="r">head(gapminder)
+</code></pre>
+
+<pre><code>## # A tibble: 6 × 6
+##   country     continent  year lifeExp      pop gdpPercap
+##   &lt;fct&gt;       &lt;fct&gt;     &lt;int&gt;   &lt;dbl&gt;    &lt;int&gt;     &lt;dbl&gt;
+## 1 Afghanistan Asia       1952    28.8  8425333      779.
+## 2 Afghanistan Asia       1957    30.3  9240934      821.
+## 3 Afghanistan Asia       1962    32.0 10267083      853.
+## 4 Afghanistan Asia       1967    34.0 11537966      836.
+## 5 Afghanistan Asia       1972    36.1 13079460      740.
+## 6 Afghanistan Asia       1977    38.4 14880372      786.
+</code></pre>
+
+<pre><code class="r">str(gapminder)
+</code></pre>
+
+<pre><code>## tibble [1,704 × 6] (S3: tbl_df/tbl/data.frame)
+##  $ country  : Factor w/ 142 levels &quot;Afghanistan&quot;,..: 1 1 1 1 1 1 1 1 1 1 ...
+##  $ continent: Factor w/ 5 levels &quot;Africa&quot;,&quot;Americas&quot;,..: 3 3 3 3 3 3 3 3 3 3 ...
+##  $ year     : int [1:1704] 1952 1957 1962 1967 1972 1977 1982 1987 1992 1997 ...
+##  $ lifeExp  : num [1:1704] 28.8 30.3 32 34 36.1 ...
+##  $ pop      : int [1:1704] 8425333 9240934 10267083 11537966 13079460 14880372 12881816 13867957 16317921 22227415 ...
+##  $ gdpPercap: num [1:1704] 779 821 853 836 740 ...
+</code></pre>
+
+<h1>Data frames are (special) lists!</h1>
+
+<pre><code class="r">is.list(gapminder)
+</code></pre>
+
+<pre><code>## [1] TRUE
+</code></pre>
+
+<pre><code class="r">length(gapminder)
+</code></pre>
+
+<pre><code>## [1] 6
+</code></pre>
+
+<pre><code class="r">gapminder[[3]][1:5]
+</code></pre>
+
+<pre><code>## [1] 1952 1957 1962 1967 1972
+</code></pre>
+
+<pre><code class="r">lapply(gapminder, class) 
+</code></pre>
+
+<pre><code>## $country
+## [1] &quot;factor&quot;
+## 
+## $continent
+## [1] &quot;factor&quot;
+## 
+## $year
+## [1] &quot;integer&quot;
+## 
+## $lifeExp
+## [1] &quot;numeric&quot;
+## 
+## $pop
+## [1] &quot;integer&quot;
+## 
+## $gdpPercap
+## [1] &quot;numeric&quot;
+</code></pre>
+
+<p><code>lapply()</code> is a function used on lists; it works here to apply the <code>class()</code> function to each element of the list, which in this case is each field/column.</p>
+
+<h1>But lists are also vectors!</h1>
+
+<pre><code class="r">length(gapminder)
+</code></pre>
+
+<pre><code>## [1] 6
+</code></pre>
+
+<pre><code class="r">someFields &lt;- gapminder[c(3,5)]
+head(someFields)
+</code></pre>
+
+<pre><code>## # A tibble: 6 × 2
+##    year      pop
+##   &lt;int&gt;    &lt;int&gt;
+## 1  1952  8425333
+## 2  1957  9240934
+## 3  1962 10267083
+## 4  1967 11537966
+## 5  1972 13079460
+## 6  1977 14880372
+</code></pre>
+
+<pre><code class="r">identical(gapminder[c(3,5)], gapminder[ , c(3,5)])
+</code></pre>
+
+<pre><code>## [1] TRUE
+</code></pre>
+
+<p>In general the placement of commas in R is crucial, but here, two different operations give the same result because of the underlying structure of data frames.</p>
+
+<h1>Matrices</h1>
+
+<p>If you need to do numeric calculations on an entire non-vector object (dimension &gt; 1), you generally want to use matrices and arrays, not data frames.</p>
+
+<ul>
+<li>Matrices are two-dimensional collections of values of the same type</li>
+<li>We can have numeric, integer, character, or logical matrices, character matrices.</li>
+<li>You can&#39;t mix types within a matrix</li>
+</ul>
+
+<pre><code class="r">mat &lt;- matrix(rnorm(12), nrow = 3, ncol = 4)
+mat
+</code></pre>
+
+<pre><code>##              [,1]       [,2]       [,3]       [,4]
+## [1,] -0.997563234 -1.4843480 0.67704596 -0.6704612
+## [2,]  0.001128528 -0.2429397 0.01286389 -0.5274799
+## [3,]  0.667443893 -0.6124777 1.34872524  0.7868177
+</code></pre>
+
+<pre><code class="r"># vectorized calcs work with matrices too
+mat*4
+</code></pre>
+
+<pre><code>##              [,1]       [,2]       [,3]      [,4]
+## [1,] -3.990252937 -5.9373919 2.70818386 -2.681845
+## [2,]  0.004514113 -0.9717588 0.05145555 -2.109920
+## [3,]  2.669775572 -2.4499108 5.39490097  3.147271
+</code></pre>
+
+<pre><code class="r">mat &lt;- cbind(mat, 1:3)
+mat
+</code></pre>
+
+<pre><code>##              [,1]       [,2]       [,3]       [,4] [,5]
+## [1,] -0.997563234 -1.4843480 0.67704596 -0.6704612    1
+## [2,]  0.001128528 -0.2429397 0.01286389 -0.5274799    2
+## [3,]  0.667443893 -0.6124777 1.34872524  0.7868177    3
+</code></pre>
+
+<pre><code class="r"># Let&#39;s convert the gapminder dataframe to a matrix:
+gm_mat &lt;- as.matrix(gapminder[ , c(&#39;lifeExp&#39;, &#39;gdpPercap&#39;)])
+head(gm_mat)
+</code></pre>
+
+<pre><code>##      lifeExp gdpPercap
+## [1,]  28.801  779.4453
+## [2,]  30.332  820.8530
+## [3,]  31.997  853.1007
+## [4,]  34.020  836.1971
+## [5,]  36.088  739.9811
+## [6,]  38.438  786.1134
+</code></pre>
+
+<h1>Matrices: quick quiz</h1>
+
+<p><strong><a href="https://www.polleverywhere.com/multiple_choice_polls/1jt7IHbQvXnaqRmUCGOru">P</a>OLL 3B</strong>: Recall the gap dataframe has columns that are numeric and columns that are character strings. What do you think will happen if we do this:</p>
+
+<pre><code>as.matrix(gapminder)
+</code></pre>
+
+<p>(respond at <a href="https://pollev.com/chrispaciorek428">https://pollev.com/chrispaciorek428</a>)</p>
+
+<p>1) it will convert to a matrix with no changes
+2) all numeric columns will be converted to character strings
+3) R will throw an error
+4) all character columns will be converted to numeric values
+5) R will drop some of the columns</p>
+
+<h1>Arrays</h1>
+
+<p>Arrays are like matrices but can have more or fewer than two dimensions.</p>
+
+<pre><code class="r">arr &lt;- array(rnorm(12), c(2, 3, 4))
+arr
+</code></pre>
+
+<pre><code>## , , 1
+## 
+##            [,1]      [,2]      [,3]
+## [1,]  0.8342853 1.0857439 0.2890717
+## [2,] -0.4741951 0.3268233 0.5573720
+## 
+## , , 2
+## 
+##           [,1]      [,2]       [,3]
+## [1,] 0.4952659 -1.309363  0.8070183
+## [2,] 0.8302991 -1.280746 -0.4620758
+## 
+## , , 3
+## 
+##            [,1]      [,2]      [,3]
+## [1,]  0.8342853 1.0857439 0.2890717
+## [2,] -0.4741951 0.3268233 0.5573720
+## 
+## , , 4
+## 
+##           [,1]      [,2]       [,3]
+## [1,] 0.4952659 -1.309363  0.8070183
+## [2,] 0.8302991 -1.280746 -0.4620758
+</code></pre>
+
+<h1>Attributes</h1>
+
+<p>Objects have <em>attributes</em>.</p>
+
+<pre><code class="r">attributes(mat)
+</code></pre>
+
+<pre><code>## $dim
+## [1] 3 5
+</code></pre>
+
+<pre><code class="r">rownames(mat) &lt;- c(&#39;first&#39;, &#39;middle&#39;, &#39;last&#39;)
+mat
+</code></pre>
+
+<pre><code>##                [,1]       [,2]       [,3]       [,4] [,5]
+## first  -0.997563234 -1.4843480 0.67704596 -0.6704612    1
+## middle  0.001128528 -0.2429397 0.01286389 -0.5274799    2
+## last    0.667443893 -0.6124777 1.34872524  0.7868177    3
+</code></pre>
+
+<pre><code class="r">attributes(mat)
+</code></pre>
+
+<pre><code>## $dim
+## [1] 3 5
+## 
+## $dimnames
+## $dimnames[[1]]
+## [1] &quot;first&quot;  &quot;middle&quot; &quot;last&quot;  
+## 
+## $dimnames[[2]]
+## NULL
+</code></pre>
+
+<pre><code class="r">names(attributes(gapminder))
+</code></pre>
+
+<pre><code>## [1] &quot;names&quot;     &quot;class&quot;     &quot;row.names&quot;
+</code></pre>
+
+<pre><code class="r">attributes(gapminder)$names
+</code></pre>
+
+<pre><code>## [1] &quot;country&quot;   &quot;continent&quot; &quot;year&quot;      &quot;lifeExp&quot;   &quot;pop&quot;       &quot;gdpPercap&quot;
+</code></pre>
+
+<pre><code class="r">attributes(gapminder)$row.names[1:10]
+</code></pre>
+
+<pre><code>##  [1]  1  2  3  4  5  6  7  8  9 10
+</code></pre>
+
+<p>Now let&#39;s do a bit of manipulation and see if you can infer how R represents matrices internally.</p>
+
+<h1>Attributes: quick quiz</h1>
+
+<p><strong><a href="https://www.polleverywhere.com/multiple_choice_polls/YkHAsxssHtWqCQ9DGMDbo">P</a>OLL 3C</strong>: Consider our matrix &#39;mat&#39;:</p>
+
+<p>(respond at <a href="https://pollev.com/chrispaciorek428">https://pollev.com/chrispaciorek428</a>)</p>
+
+<pre><code>mat &lt;- matrix(1:16, nrow = 4, ncol = 4)
+     [,1] [,2] [,3] [,4]
+[1,]    1    5    9   13
+[2,]    2    6   10   14
+[3,]    3    7   11   15
+[4,]    4    8   12   16
+</code></pre>
+
+<p>Suppose I run this code: mat[4]</p>
+
+<p>What do you think will be returned?</p>
+
+<p>1) 13
+2) 4
+3) 13, 14, 15, 16
+4) 4, 8, 12, 16
+5) an error</p>
+
+<pre><code class="r">mat[4]
+attributes(mat) &lt;- NULL
+mat
+is.matrix(mat)
+</code></pre>
+
+<p><strong>Question</strong>: What can you infer about what a matrix is in R?</p>
+
+<p><strong>Question</strong>: What kind of object are the attributes themselves? How do I check?</p>
+
+<h1>Matrices are stored column-major</h1>
+
+<p>This is like Fortran, MATLAB and Julia but not like C or Python(numpy). </p>
+
+<pre><code class="r">mat &lt;- matrix(1:12, 3, 4)
+mat
+</code></pre>
+
+<pre><code>##      [,1] [,2] [,3] [,4]
+## [1,]    1    4    7   10
+## [2,]    2    5    8   11
+## [3,]    3    6    9   12
+</code></pre>
+
+<pre><code class="r">vals &lt;- c(mat)
+</code></pre>
+
+<p>You can go smoothly back and forth between a matrix (or an array) and a vector:</p>
+
+<pre><code class="r">identical(mat, matrix(vals, 3, 4))
+</code></pre>
+
+<pre><code>## [1] TRUE
+</code></pre>
+
+<pre><code class="r">identical(mat, matrix(vals, 3, 4, byrow = TRUE))
+</code></pre>
+
+<pre><code>## [1] FALSE
+</code></pre>
+
+<p>This is a common cause of bugs!</p>
+
+<h1>Missing values and other special values</h1>
+
+<p>Since it was designed by statisticians, R handles missing values very well relative to other languages.</p>
+
+<h2><code>NA</code> is a missing value</h2>
+
+<pre><code class="r">vec &lt;- rnorm(12)
+vec[c(3, 5)] &lt;- NA
+vec
+</code></pre>
+
+<pre><code>##  [1] -1.04710949 -0.25433306          NA  1.30207420          NA  0.19756982
+##  [7] -1.44054992  0.76560416  0.15789745 -0.04049116 -1.03669646 -1.51556459
+</code></pre>
+
+<pre><code class="r">length(vec)
+</code></pre>
+
+<pre><code>## [1] 12
+</code></pre>
+
+<pre><code class="r">sum(vec)
+</code></pre>
+
+<pre><code>## [1] NA
+</code></pre>
+
+<pre><code class="r">sum(vec, na.rm = TRUE)
+</code></pre>
+
+<pre><code>## [1] -2.911599
+</code></pre>
+
+<pre><code class="r">hist(vec)
+</code></pre>
+
+<p><img src="data:image/png;base64,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" alt=""/></p>
+
+<pre><code class="r">is.na(vec)
+</code></pre>
+
+<pre><code>##  [1] FALSE FALSE  TRUE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+</code></pre>
+
+<p>Be careful because many R functions won&#39;t warn you that they are ignoring the missing values.</p>
+
+<h2>To infinity and beyond</h2>
+
+<pre><code class="r">big &lt;- 1e500 
+big
+</code></pre>
+
+<pre><code>## [1] Inf
+</code></pre>
+
+<pre><code class="r">big + 7
+</code></pre>
+
+<pre><code>## [1] Inf
+</code></pre>
+
+<h2><code>NaN</code> stands for Not a Number</h2>
+
+<pre><code class="r">sqrt(-5)
+</code></pre>
+
+<pre><code>## Warning in sqrt(-5): NaNs produced
+</code></pre>
+
+<pre><code>## [1] NaN
+</code></pre>
+
+<pre><code class="r">big - big
+</code></pre>
+
+<pre><code>## [1] NaN
+</code></pre>
+
+<pre><code class="r">1/0
+</code></pre>
+
+<pre><code>## [1] Inf
+</code></pre>
+
+<h2><code>NULL</code></h2>
+
+<pre><code class="r">vec &lt;- c(vec, NULL) 
+vec
+</code></pre>
+
+<pre><code>##  [1] -1.04710949 -0.25433306          NA  1.30207420          NA  0.19756982
+##  [7] -1.44054992  0.76560416  0.15789745 -0.04049116 -1.03669646 -1.51556459
+</code></pre>
+
+<pre><code class="r">length(vec)
+</code></pre>
+
+<pre><code>## [1] 12
+</code></pre>
+
+<pre><code class="r">a &lt;- NULL
+a + 7
+</code></pre>
+
+<pre><code>## numeric(0)
+</code></pre>
+
+<pre><code class="r">a[3, 4]
+</code></pre>
+
+<pre><code>## NULL
+</code></pre>
+
+<pre><code class="r">is.null(a)
+</code></pre>
+
+<pre><code>## [1] TRUE
+</code></pre>
+
+<pre><code class="r">myList &lt;- list(a = 7, b = 5)
+myList$a &lt;- NULL  # works for data frames too
+myList
+</code></pre>
+
+<pre><code>## $b
+## [1] 5
+</code></pre>
+
+<p><code>NA</code> can hold a place but <code>NULL</code> cannot.
+<code>NULL</code> is useful for having a function argument default to &#39;nothing&#39;. See <code>help(crossprod)</code>, which can compute either \(X^{\top}X\) or \(X^{\top}Y\).  </p>
+
+<h1>Missing values: quick quiz</h1>
+
+<p><strong>POLL 3D</strong></p>
+
+<p>(just respond in your head; I won&#39;t collect the answers online)</p>
+
+<p><em>Question 1</em>: Consider the following vector:</p>
+
+<pre><code>vec &lt;- c(3, NA, 7)
+</code></pre>
+
+<p>What is vec[2]:</p>
+
+<p>1) NA
+2) 7</p>
+
+<p><em>Question 2</em>: Consider this vector:</p>
+
+<pre><code>vec &lt;- c(3, NULL, 7)
+</code></pre>
+
+<p>What is vec[2]:</p>
+
+<p>1) NULL
+2) NA
+3) 7
+4) 3</p>
+
+<p><em>Question 3</em>: Consider this list:</p>
+
+<pre><code>mylist &lt;- list(3, NULL, 7)
+</code></pre>
+
+<p>What is mylist[[2]]:</p>
+
+<p>1) 7
+2) NULL
+3) NA
+4) 3</p>
+
+<p><em>Question 4</em>: Consider this code:</p>
+
+<pre><code>mylist &lt;- list(3, 5, 7)
+mylist[[2]] &lt;- NULL
+</code></pre>
+
+<p>What is length(mylist):</p>
+
+<p>1) 3
+2) 2
+3) 1</p>
+
+<h1>Logical vectors and boolean arithmetic</h1>
+
+<pre><code class="r">gapminder2007 &lt;- gapminder[gapminder$year == 2007, ]
+
+wealthy &lt;- gapminder2007$gdpPercap &gt; 35000
+healthy &lt;- gapminder2007$lifeExp &gt; 75
+
+head(wealthy)
+</code></pre>
+
+<pre><code>## [1] FALSE FALSE FALSE FALSE FALSE FALSE
+</code></pre>
+
+<pre><code class="r">table(wealthy)
+</code></pre>
+
+<pre><code>## wealthy
+## FALSE  TRUE 
+##   130    12
+</code></pre>
+
+<pre><code class="r"># note the vectorized boolean arithmetic
+gapminder2007[wealthy &amp; healthy, ]
+</code></pre>
+
+<pre><code>## # A tibble: 12 × 6
+##    country          continent  year lifeExp       pop gdpPercap
+##    &lt;fct&gt;            &lt;fct&gt;     &lt;int&gt;   &lt;dbl&gt;     &lt;int&gt;     &lt;dbl&gt;
+##  1 Austria          Europe     2007    79.8   8199783    36126.
+##  2 Canada           Americas   2007    80.7  33390141    36319.
+##  3 Denmark          Europe     2007    78.3   5468120    35278.
+##  4 Hong Kong, China Asia       2007    82.2   6980412    39725.
+##  5 Iceland          Europe     2007    81.8    301931    36181.
+##  6 Ireland          Europe     2007    78.9   4109086    40676.
+##  7 Kuwait           Asia       2007    77.6   2505559    47307.
+##  8 Netherlands      Europe     2007    79.8  16570613    36798.
+##  9 Norway           Europe     2007    80.2   4627926    49357.
+## 10 Singapore        Asia       2007    80.0   4553009    47143.
+## 11 Switzerland      Europe     2007    81.7   7554661    37506.
+## 12 United States    Americas   2007    78.2 301139947    42952.
+</code></pre>
+
+<pre><code class="r">gapminder2007[wealthy | healthy, ]
+</code></pre>
+
+<pre><code>## # A tibble: 44 × 6
+##    country    continent  year lifeExp      pop gdpPercap
+##    &lt;fct&gt;      &lt;fct&gt;     &lt;int&gt;   &lt;dbl&gt;    &lt;int&gt;     &lt;dbl&gt;
+##  1 Albania    Europe     2007    76.4  3600523     5937.
+##  2 Argentina  Americas   2007    75.3 40301927    12779.
+##  3 Australia  Oceania    2007    81.2 20434176    34435.
+##  4 Austria    Europe     2007    79.8  8199783    36126.
+##  5 Bahrain    Asia       2007    75.6   708573    29796.
+##  6 Belgium    Europe     2007    79.4 10392226    33693.
+##  7 Canada     Americas   2007    80.7 33390141    36319.
+##  8 Chile      Americas   2007    78.6 16284741    13172.
+##  9 Costa Rica Americas   2007    78.8  4133884     9645.
+## 10 Croatia    Europe     2007    75.7  4493312    14619.
+## # … with 34 more rows
+## # ℹ Use `print(n = ...)` to see more rows
+</code></pre>
+
+<pre><code class="r">gapminder2007[wealthy &amp; !healthy, ]
+</code></pre>
+
+<pre><code>## # A tibble: 0 × 6
+## # … with 6 variables: country &lt;fct&gt;, continent &lt;fct&gt;, year &lt;int&gt;,
+## #   lifeExp &lt;dbl&gt;, pop &lt;int&gt;, gdpPercap &lt;dbl&gt;
+## # ℹ Use `colnames()` to see all variable names
+</code></pre>
+
+<pre><code class="r"># what am I doing here?
+sum(healthy)
+</code></pre>
+
+<pre><code>## [1] 44
+</code></pre>
+
+<pre><code class="r">mean(healthy)
+</code></pre>
+
+<pre><code>## [1] 0.3098592
+</code></pre>
+
+<p><strong>Question</strong>: What do you think R is doing to do arithmetic on logical vectors?</p>
+
+<h1>Converting between different types of objects</h1>
+
+<p>You can use the <code>as()</code> family of functions.</p>
+
+<pre><code class="r">ints &lt;- 1:10
+as.character(ints)
+</code></pre>
+
+<pre><code>##  [1] &quot;1&quot;  &quot;2&quot;  &quot;3&quot;  &quot;4&quot;  &quot;5&quot;  &quot;6&quot;  &quot;7&quot;  &quot;8&quot;  &quot;9&quot;  &quot;10&quot;
+</code></pre>
+
+<pre><code class="r">as.numeric(c(&#39;3.7&#39;, &#39;4.8&#39;))
+</code></pre>
+
+<pre><code>## [1] 3.7 4.8
+</code></pre>
+
+<p>Be careful: R tries to be helpful and convert between types/classes when it thinks it&#39;s a good idea. Sometimes it is overly optimistic. </p>
+
+<pre><code class="r">indices &lt;- c(1.7, 2.3)
+ints[indices]
+</code></pre>
+
+<pre><code>## [1] 1 2
+</code></pre>
+
+<pre><code class="r">ints[0.999999999]
+</code></pre>
+
+<pre><code>## integer(0)
+</code></pre>
+
+<h1>Converting between different types: quick quiz</h1>
+
+<p><strong>POLL 3E</strong>:</p>
+
+<p>(just respond in your head; I won&#39;t collect the answers online)</p>
+
+<p><em>Question 1</em>: What do you think this will do?</p>
+
+<pre><code>ints &lt;- 1:5
+ints[0.9999]
+</code></pre>
+
+<p>1) return an error
+2) return 1
+3) return an empty vector</p>
+
+<p><em>Question 2</em>: What does the code do when it tries to use 0.9999 to subset?</p>
+
+<p>1) round the 0.9999 to 1
+2) truncate the 0.9999 to 0
+3) return an error</p>
+
+<h1>Factors</h1>
+
+<ul>
+<li>A factor is a special data type in R used for categorical data. In some cases it works like magic and in others it is incredibly frustrating. </li>
+</ul>
+
+<pre><code class="r">## let&#39;s read the Gapminder data from a file with a special argument:
+gapminder &lt;- read.csv(file.path(&#39;..&#39;, &#39;data&#39;, &#39;gapminder-FiveYearData.csv&#39;),
+          stringsAsFactors = TRUE) # This was the default before R 4.0
+class(gapminder$continent)
+</code></pre>
+
+<pre><code>## [1] &quot;factor&quot;
+</code></pre>
+
+<pre><code class="r">head(gapminder$continent) # What order are the factors in?
+</code></pre>
+
+<pre><code>## [1] Asia Asia Asia Asia Asia Asia
+## Levels: Africa Americas Asia Europe Oceania
+</code></pre>
+
+<pre><code class="r">levels(gapminder[[&quot;continent&quot;]])  # note alternate way to get the variable
+</code></pre>
+
+<pre><code>## [1] &quot;Africa&quot;   &quot;Americas&quot; &quot;Asia&quot;     &quot;Europe&quot;   &quot;Oceania&quot;
+</code></pre>
+
+<pre><code class="r">summary(gapminder$continent)
+</code></pre>
+
+<pre><code>##   Africa Americas     Asia   Europe  Oceania 
+##      624      300      396      360       24
+</code></pre>
+
+<ul>
+<li>What if we don&#39;t like the order these are in? Factor order is important for all kinds of things like plotting, analysis of variance, regression output, and more</li>
+</ul>
+
+<h1>(Advanced) Ordering the Factor (optional)</h1>
+
+<ul>
+<li>Ordered factors simply have an additional attribute explaining the order of the levels of a factor</li>
+<li>This is a useful shortcut when we want to preserve some of the meaning provided by the order</li>
+<li>Think ordinal data</li>
+</ul>
+
+<p>This example is a bit artificial as &#39;continent&#39; doesn&#39;t really have a natural ordering.</p>
+
+<pre><code class="r">gapminder$continent2 &lt;- ordered(gapminder$continent, 
+     levels = levels(gapminder$continent)[c(2,1,3,4,5)])
+
+head(gapminder$continent2)
+</code></pre>
+
+<pre><code>## [1] Asia Asia Asia Asia Asia Asia
+## Levels: Americas &lt; Africa &lt; Asia &lt; Europe &lt; Oceania
+</code></pre>
+
+<pre><code class="r">levels(gapminder$continent2)
+</code></pre>
+
+<pre><code>## [1] &quot;Americas&quot; &quot;Africa&quot;   &quot;Asia&quot;     &quot;Europe&quot;   &quot;Oceania&quot;
+</code></pre>
+
+<pre><code class="r">boxplot(lifeExp ~ continent2, data = gapminder)
+</code></pre>
+
+<p><img src="data:image/png;base64,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" alt=""/></p>
+
+<h1>(Advanced) Reclassifying Factors</h1>
+
+<ul>
+<li>Turning factors into other data types can be tricky. All factors have an underlying numeric structure.</li>
+</ul>
+
+<pre><code class="r">students &lt;- factor(c(&#39;basic&#39;,&#39;proficient&#39;,&#39;advanced&#39;,&#39;basic&#39;, 
+      &#39;advanced&#39;, &#39;minimal&#39;))
+levels(students)
+</code></pre>
+
+<pre><code>## [1] &quot;advanced&quot;   &quot;basic&quot;      &quot;minimal&quot;    &quot;proficient&quot;
+</code></pre>
+
+<pre><code class="r">unclass(students)
+</code></pre>
+
+<pre><code>## [1] 2 4 1 2 1 3
+## attr(,&quot;levels&quot;)
+## [1] &quot;advanced&quot;   &quot;basic&quot;      &quot;minimal&quot;    &quot;proficient&quot;
+</code></pre>
+
+<ul>
+<li>Hmmm, what happened?</li>
+<li>Be careful! The best way to convert a factor is to convert it to a character first.</li>
+</ul>
+
+<pre><code class="r">students &lt;- factor(c(&#39;basic&#39;,&#39;proficient&#39;,&#39;advanced&#39;,&#39;basic&#39;, 
+      &#39;advanced&#39;, &#39;minimal&#39;))
+score = c(minimal = 65, basic = 75, advanced = 95, proficient = 85) # a named vector
+score[&quot;advanced&quot;]  # look up by name
+</code></pre>
+
+<pre><code>## advanced 
+##       95
+</code></pre>
+
+<pre><code class="r">students[3]
+</code></pre>
+
+<pre><code>## [1] advanced
+## Levels: advanced basic minimal proficient
+</code></pre>
+
+<pre><code class="r">score[students[3]]
+</code></pre>
+
+<pre><code>## minimal 
+##      65
+</code></pre>
+
+<pre><code class="r">score[as.character(students[3])]
+</code></pre>
+
+<pre><code>## advanced 
+##       95
+</code></pre>
+
+<p>What went wrong and how did we fix it?  Notice how easily this could be a big bug in your code.</p>
+
+<h1>Strings</h1>
+
+<p>R has lots of functionality for character strings. Usually these are stored as vectors of strings, each string of arbitrary length.</p>
+
+<pre><code class="r">chars &lt;- c(&#39;hi&#39;, &#39;hallo&#39;, &quot;mother&#39;s&quot;, &#39;father\&#39;s&#39;, &quot;He said, \&quot;hi\&quot;&quot; )
+length(chars)
+</code></pre>
+
+<pre><code>## [1] 5
+</code></pre>
+
+<pre><code class="r">nchar(chars)
+</code></pre>
+
+<pre><code>## [1]  2  5  8  8 13
+</code></pre>
+
+<pre><code class="r">paste(&quot;bill&quot;, &quot;clinton&quot;, sep = &quot; &quot;)  # paste together a set of strings
+</code></pre>
+
+<pre><code>## [1] &quot;bill clinton&quot;
+</code></pre>
+
+<pre><code class="r">paste(chars, collapse = &#39; &#39;)  # paste together things from a vector
+</code></pre>
+
+<pre><code>## [1] &quot;hi hallo mother&#39;s father&#39;s He said, \&quot;hi\&quot;&quot;
+</code></pre>
+
+<pre><code class="r">strsplit(&quot;This is the R bootcamp&quot;, split = &quot; &quot;)
+</code></pre>
+
+<pre><code>## [[1]]
+## [1] &quot;This&quot;     &quot;is&quot;       &quot;the&quot;      &quot;R&quot;        &quot;bootcamp&quot;
+</code></pre>
+
+<pre><code class="r">countries &lt;- as.character(gapminder2007$country)
+substring(countries, 1, 3)
+</code></pre>
+
+<pre><code>##   [1] &quot;Afg&quot; &quot;Alb&quot; &quot;Alg&quot; &quot;Ang&quot; &quot;Arg&quot; &quot;Aus&quot; &quot;Aus&quot; &quot;Bah&quot; &quot;Ban&quot; &quot;Bel&quot; &quot;Ben&quot; &quot;Bol&quot;
+##  [13] &quot;Bos&quot; &quot;Bot&quot; &quot;Bra&quot; &quot;Bul&quot; &quot;Bur&quot; &quot;Bur&quot; &quot;Cam&quot; &quot;Cam&quot; &quot;Can&quot; &quot;Cen&quot; &quot;Cha&quot; &quot;Chi&quot;
+##  [25] &quot;Chi&quot; &quot;Col&quot; &quot;Com&quot; &quot;Con&quot; &quot;Con&quot; &quot;Cos&quot; &quot;Cot&quot; &quot;Cro&quot; &quot;Cub&quot; &quot;Cze&quot; &quot;Den&quot; &quot;Dji&quot;
+##  [37] &quot;Dom&quot; &quot;Ecu&quot; &quot;Egy&quot; &quot;El &quot; &quot;Equ&quot; &quot;Eri&quot; &quot;Eth&quot; &quot;Fin&quot; &quot;Fra&quot; &quot;Gab&quot; &quot;Gam&quot; &quot;Ger&quot;
+##  [49] &quot;Gha&quot; &quot;Gre&quot; &quot;Gua&quot; &quot;Gui&quot; &quot;Gui&quot; &quot;Hai&quot; &quot;Hon&quot; &quot;Hon&quot; &quot;Hun&quot; &quot;Ice&quot; &quot;Ind&quot; &quot;Ind&quot;
+##  [61] &quot;Ira&quot; &quot;Ira&quot; &quot;Ire&quot; &quot;Isr&quot; &quot;Ita&quot; &quot;Jam&quot; &quot;Jap&quot; &quot;Jor&quot; &quot;Ken&quot; &quot;Kor&quot; &quot;Kor&quot; &quot;Kuw&quot;
+##  [73] &quot;Leb&quot; &quot;Les&quot; &quot;Lib&quot; &quot;Lib&quot; &quot;Mad&quot; &quot;Mal&quot; &quot;Mal&quot; &quot;Mal&quot; &quot;Mau&quot; &quot;Mau&quot; &quot;Mex&quot; &quot;Mon&quot;
+##  [85] &quot;Mon&quot; &quot;Mor&quot; &quot;Moz&quot; &quot;Mya&quot; &quot;Nam&quot; &quot;Nep&quot; &quot;Net&quot; &quot;New&quot; &quot;Nic&quot; &quot;Nig&quot; &quot;Nig&quot; &quot;Nor&quot;
+##  [97] &quot;Oma&quot; &quot;Pak&quot; &quot;Pan&quot; &quot;Par&quot; &quot;Per&quot; &quot;Phi&quot; &quot;Pol&quot; &quot;Por&quot; &quot;Pue&quot; &quot;Reu&quot; &quot;Rom&quot; &quot;Rwa&quot;
+## [109] &quot;Sao&quot; &quot;Sau&quot; &quot;Sen&quot; &quot;Ser&quot; &quot;Sie&quot; &quot;Sin&quot; &quot;Slo&quot; &quot;Slo&quot; &quot;Som&quot; &quot;Sou&quot; &quot;Spa&quot; &quot;Sri&quot;
+## [121] &quot;Sud&quot; &quot;Swa&quot; &quot;Swe&quot; &quot;Swi&quot; &quot;Syr&quot; &quot;Tai&quot; &quot;Tan&quot; &quot;Tha&quot; &quot;Tog&quot; &quot;Tri&quot; &quot;Tun&quot; &quot;Tur&quot;
+## [133] &quot;Uga&quot; &quot;Uni&quot; &quot;Uni&quot; &quot;Uru&quot; &quot;Ven&quot; &quot;Vie&quot; &quot;Wes&quot; &quot;Yem&quot; &quot;Zam&quot; &quot;Zim&quot;
+</code></pre>
+
+<pre><code class="r">tmp &lt;- countries
+substring(tmp, 5, 10) &lt;- &quot;______&quot;
+tmp[1:20]
+</code></pre>
+
+<pre><code>##  [1] &quot;Afgh______n&quot;            &quot;Alba___&quot;                &quot;Alge___&quot;               
+##  [4] &quot;Ango__&quot;                 &quot;Arge_____&quot;              &quot;Aust_____&quot;             
+##  [7] &quot;Aust___&quot;                &quot;Bahr___&quot;                &quot;Bang______&quot;            
+## [10] &quot;Belg___&quot;                &quot;Beni_&quot;                  &quot;Boli___&quot;               
+## [13] &quot;Bosn______ Herzegovina&quot; &quot;Bots____&quot;               &quot;Braz__&quot;                
+## [16] &quot;Bulg____&quot;               &quot;Burk______so&quot;           &quot;Buru___&quot;               
+## [19] &quot;Camb____&quot;               &quot;Came____&quot;
+</code></pre>
+
+<p>We can search for patterns in character vectors and replace patterns (both vectorized!)</p>
+
+<pre><code class="r">indexes &lt;- grep(&quot;Korea&quot;, countries)
+indexes
+</code></pre>
+
+<pre><code>## [1] 70 71
+</code></pre>
+
+<pre><code class="r">countries[indexes]
+</code></pre>
+
+<pre><code>## [1] &quot;Korea, Dem. Rep.&quot; &quot;Korea, Rep.&quot;
+</code></pre>
+
+<pre><code class="r">countries2 &lt;- gsub(&quot;Korea, Dem. Rep.&quot;, &quot;North Korea&quot;, countries)
+countries2[indexes]
+</code></pre>
+
+<pre><code>## [1] &quot;North Korea&quot; &quot;Korea, Rep.&quot;
+</code></pre>
+
+<h1>Regular expressions (regex or regexp) (optional)</h1>
+
+<p>Some of you may be familiar with using <em>regular expressions</em>, which is functionality for doing sophisticated pattern matching and replacement with strings. <em>Python</em> and <em>Perl</em> are both used extensively for such text manipulation. </p>
+
+<p>R has a full set of regular expression capabilities available through the <em>grep()</em>, <em>gregexpr()</em>, and <em>gsub()</em> functions (among others - many R functions will work with regular expressions). However, a particularly nice way to make use of this functionality is to use the <em>stringr</em> package, which is more user-friendly than directly using the core R functions.</p>
+
+<p>You can basically do any regular expression/string manipulations in R.</p>
+
+<h1>Subsetting</h1>
+
+<p>There are many ways to select subsets in R. The syntax below is useful for vectors, matrices, data frames, arrays and lists.</p>
+
+<pre><code class="r">vec &lt;- gapminder2007$lifeExp
+mat &lt;- matrix(1:20, 4, 5)
+rownames(mat) &lt;- letters[1:4]
+mat
+</code></pre>
+
+<pre><code>##   [,1] [,2] [,3] [,4] [,5]
+## a    1    5    9   13   17
+## b    2    6   10   14   18
+## c    3    7   11   15   19
+## d    4    8   12   16   20
+</code></pre>
+
+<h2>1) by direct indexing</h2>
+
+<pre><code class="r">vec[c(3, 5, 12:14)]
+</code></pre>
+
+<pre><code>## [1] 72.301 75.320 65.554 74.852 50.728
+</code></pre>
+
+<pre><code class="r">vec[-c(3,5)]
+</code></pre>
+
+<pre><code>##   [1] 43.828 76.423 42.731 81.235 79.829 75.635 64.062 79.441 56.728 65.554
+##  [11] 74.852 50.728 72.390 73.005 52.295 49.580 59.723 50.430 80.653 44.741
+##  [21] 50.651 78.553 72.961 72.889 65.152 46.462 55.322 78.782 48.328 75.748
+##  [31] 78.273 76.486 78.332 54.791 72.235 74.994 71.338 71.878 51.579 58.040
+##  [41] 52.947 79.313 80.657 56.735 59.448 79.406 60.022 79.483 70.259 56.007
+##  [51] 46.388 60.916 70.198 82.208 73.338 81.757 64.698 70.650 70.964 59.545
+##  [61] 78.885 80.745 80.546 72.567 82.603 72.535 54.110 67.297 78.623 77.588
+##  [71] 71.993 42.592 45.678 73.952 59.443 48.303 74.241 54.467 64.164 72.801
+##  [81] 76.195 66.803 74.543 71.164 42.082 62.069 52.906 63.785 79.762 80.204
+##  [91] 72.899 56.867 46.859 80.196 75.640 65.483 75.537 71.752 71.421 71.688
+## [101] 75.563 78.098 78.746 76.442 72.476 46.242 65.528 72.777 63.062 74.002
+## [111] 42.568 79.972 74.663 77.926 48.159 49.339 80.941 72.396 58.556 39.613
+## [121] 80.884 81.701 74.143 78.400 52.517 70.616 58.420 69.819 73.923 71.777
+## [131] 51.542 79.425 78.242 76.384 73.747 74.249 73.422 62.698 42.384 43.487
+</code></pre>
+
+<pre><code class="r">gapminder[c(2,4), 5]
+</code></pre>
+
+<pre><code>## [1] 30.332 34.020
+</code></pre>
+
+<pre><code class="r">gapminder[c(2,4), &#39;lifeExp&#39;]
+</code></pre>
+
+<pre><code>## [1] 30.332 34.020
+</code></pre>
+
+<pre><code class="r">## Advanced: subset using a 2-column matrix of indices:
+rowInd &lt;- c(1, 3, 4)
+colInd &lt;- c(2, 2, 1)
+elemInd &lt;- cbind(rowInd, colInd)
+elemInd
+</code></pre>
+
+<pre><code>##      rowInd colInd
+## [1,]      1      2
+## [2,]      3      2
+## [3,]      4      1
+</code></pre>
+
+<pre><code class="r">gapminder[elemInd]
+</code></pre>
+
+<pre><code>## [1] &quot;1952&quot;        &quot;1962&quot;        &quot;Afghanistan&quot;
+</code></pre>
+
+<h2>2) by a vector of logicals</h2>
+
+<pre><code class="r">wealthy &lt;- gapminder$gdpPercap &gt; 50000
+gapminder$gdpPercap[wealthy]
+</code></pre>
+
+<pre><code>## [1] 108382.35 113523.13  95458.11  80894.88 109347.87  59265.48
+</code></pre>
+
+<pre><code class="r">gapminder[wealthy, ]
+</code></pre>
+
+<pre><code>##     country year     pop continent lifeExp gdpPercap continent2
+## 853  Kuwait 1952  160000      Asia  55.565 108382.35       Asia
+## 854  Kuwait 1957  212846      Asia  58.033 113523.13       Asia
+## 855  Kuwait 1962  358266      Asia  60.470  95458.11       Asia
+## 856  Kuwait 1967  575003      Asia  64.624  80894.88       Asia
+## 857  Kuwait 1972  841934      Asia  67.712 109347.87       Asia
+## 858  Kuwait 1977 1140357      Asia  69.343  59265.48       Asia
+</code></pre>
+
+<p>What happened in the last subsetting operation?</p>
+
+<h2>3) by a vector of names</h2>
+
+<pre><code class="r">mat[c(&#39;a&#39;, &#39;d&#39;, &#39;a&#39;), ]
+</code></pre>
+
+<pre><code>##   [,1] [,2] [,3] [,4] [,5]
+## a    1    5    9   13   17
+## d    4    8   12   16   20
+## a    1    5    9   13   17
+</code></pre>
+
+<h2>4) using <em>subset()</em></h2>
+
+<pre><code class="r">subset(gapminder, gdpPercap &gt; 50000)
+</code></pre>
+
+<pre><code>##     country year     pop continent lifeExp gdpPercap continent2
+## 853  Kuwait 1952  160000      Asia  55.565 108382.35       Asia
+## 854  Kuwait 1957  212846      Asia  58.033 113523.13       Asia
+## 855  Kuwait 1962  358266      Asia  60.470  95458.11       Asia
+## 856  Kuwait 1967  575003      Asia  64.624  80894.88       Asia
+## 857  Kuwait 1972  841934      Asia  67.712 109347.87       Asia
+## 858  Kuwait 1977 1140357      Asia  69.343  59265.48       Asia
+</code></pre>
+
+<h2>5) using <em>dplyr</em> tools such as <em>filter()</em> and <em>select()</em> &ndash; more in Module 6</h2>
+
+<h1>Assignment into subsets</h1>
+
+<p>We can assign into subsets by using similar syntax, as we saw with vectors.</p>
+
+<pre><code class="r">vec &lt;- rnorm(20)
+vec[c(3, 5, 12:14)] &lt;- 1:5
+vec
+</code></pre>
+
+<pre><code>##  [1] -0.54609384  0.41276992  1.00000000 -0.08751844  2.00000000 -0.04387560
+##  [7] -1.71994174 -1.52028202  0.30287244 -0.57162163  0.12997778  3.00000000
+## [13]  4.00000000  5.00000000  0.38895028  0.91324059 -0.56111335  0.65813862
+## [19] -0.86476739  1.43320661
+</code></pre>
+
+<pre><code class="r">mat &lt;- matrix(rnorm(6*5), nrow = 6)
+mat[2, 3:5] &lt;- rnorm(3)
+mat
+</code></pre>
+
+<pre><code>##           [,1]        [,2]         [,3]       [,4]       [,5]
+## [1,] 0.1133369  1.42521557  1.146829016  3.8904220 -1.9544089
+## [2,] 0.3710806 -0.28580184 -0.008796788  0.9700758 -0.9604171
+## [3,] 0.6533810 -0.31371728  0.667937581  0.7597577 -1.2873426
+## [4,] 2.6515761 -0.02834754 -0.971263419 -0.7769350  0.4070947
+## [5,] 0.7967564  1.24422818 -1.651554999  0.8570243 -1.3529498
+## [6,] 0.8221053 -0.80660057  0.728385214  0.9393530  1.2343110
+</code></pre>
+
+<pre><code class="r">mat[mat[,1] &gt; 0, ] &lt;- -Inf
+mat
+</code></pre>
+
+<pre><code>##      [,1] [,2] [,3] [,4] [,5]
+## [1,] -Inf -Inf -Inf -Inf -Inf
+## [2,] -Inf -Inf -Inf -Inf -Inf
+## [3,] -Inf -Inf -Inf -Inf -Inf
+## [4,] -Inf -Inf -Inf -Inf -Inf
+## [5,] -Inf -Inf -Inf -Inf -Inf
+## [6,] -Inf -Inf -Inf -Inf -Inf
+</code></pre>
+
+<h1>Subsetting: quick quiz</h1>
+
+<p><strong><a href="https://www.polleverywhere.com/multiple_choice_polls/fFm9QlOQDGRz0pJZklyV2">P</a>OLL 3F</strong>: Suppose I want to select the 3rd elements from the 2nd and 4th columns of a matrix or dataframe. Which syntax will work?</p>
+
+<p>(respond at <a href="https://pollev.com/chrispaciorek428">https://pollev.com/chrispaciorek428</a>)</p>
+
+<p>Here&#39;s a test matrix:</p>
+
+<pre><code>mat &lt;- matrix(1:16, nrow = 4, ncol = 4)
+</code></pre>
+
+<p>1) mat[3, (2, 4)]
+2) mat[c(FALSE, FALSE, TRUE, FALSE), c(FALSE, TRUE, FALSE, TRUE)]
+3) mat[c(FALSE, FALSE, TRUE, FALSE), c(2, 4)]
+4) mat[3, c(2, 4)]
+5) mat(3, c(2, 4))
+6) mat[3, ][c(2, 4)]
+7) mat[ , c(2, 4)][3, ]
+8) mat[ , c(2, 4)][3]
+9) mat[c(2, 4)][3, ]</p>
+
+<p><strong>POLL 3F</strong>: (Advanced) One of those answers won&#39;t work with a matrix but will work with a dataframe. Which one?</p>
+
+<p>1) mat[3, (2, 4)]
+2) mat[c(FALSE, FALSE, TRUE, FALSE), c(FALSE, TRUE, FALSE, TRUE)]
+3) mat[c(FALSE, FALSE, TRUE, FALSE), c(2, 4)]
+4) mat[3, c(2, 4)]
+5) mat(3, c(2, 4))
+6) mat[3, ][c(2, 4)]
+7) mat[ , c(2, 4)][3, ]
+8) mat[ , c(2, 4)][3]
+9) mat[c(2, 4)][3, ]</p>
+
+<h1>Breakout</h1>
+
+<h3>Basics</h3>
+
+<p>1) Extract the 5th row from the gapminder dataset.</p>
+
+<p>2) Extract the last row from the gapminder dataset. </p>
+
+<p>3) Count the number of gdpPercap values greater than 50000 in the gapminder dataset.</p>
+
+<p>4) Set all of the gdpPercap values greater than 50000 to NA. You should probably first copy the <code>gap</code> object and work on the copy so that the dataset is unchanged (or just read the data into R again afterwards to get a clean copy).</p>
+
+<p>5) Consider the first row of the gapminder dataset, which has Afghanistan for 1952. How do I create a string &ldquo;Afghanistan-1952&rdquo; using <code>gap$country[1]</code> and <code>gap$year[1]</code>? </p>
+
+<h3>Using the ideas</h3>
+
+<p>6) Create a character string using <code>paste()</code> that tells the user how many rows there are in the data frame - do this programmatically such that it would work for any data frame regardless of how many rows it has. The result should look like this: &ldquo;There are 1704 rows in the dataset&rdquo;</p>
+
+<p>7) If you didn&#39;t do it this way already in problem #2, extract the last row from the gapminder dataset without typing the number &#39;1704&#39;.</p>
+
+<p>8) Create a boolean vector indicating if the life expectancy is greater than 75 and the gdpPercap is less than 10000 and calculate the proportion of all the records these represent.</p>
+
+<p>9) Use that vector to create a new data frame that is a subset of the original data frame.</p>
+
+<p>10) Consider the attributes of the gapminder dataset. What kind of R object is the set of attributes?</p>
+
+<h3>Advanced</h3>
+
+<p>11) Create row names for the data frame based on concatenating the Continent, Country, and Year fields.</p>
+
+</body>
+
+</html>
