@@ -12,7 +12,7 @@ for discussion of solutions.
  
 - Day 1 morning (8:30-12:15) (learning R)
 
-  - [Module 0](modules/module0_induction): Introduction, what is R, starting R, why R? (Chris) (15 minutes)
+  - [Module 0](./modules/module0_induction): Introduction, what is R, starting R, why R? (Chris) (15 minutes)
   - [Module 1](modules/module1_basics): Basics of R, with RStudio (Chris presents)
     * R as a calculator
     * helpful shortcuts: tab-complete, up arrow, Ctrl-{up arrow}
