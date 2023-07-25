@@ -1,12 +1,12 @@
 % R bootcamp, Module 0: Recruit processing
-% August 2022, UC Berkeley
+% August 2023, UC Berkeley
 % Chris Paciorek
 
 # A few administrative things
 
 ## Where to find stuff
 
-This [website](https://berkeley-scf.github.io/r-bootcamp-fall-2022) and the associated GitHub site ([https://github.com/berkeley-scf/r-bootcamp-fall-2022](https://github.com/berkeley-scf/r-bootcamp-fall-2022)) is the main site for the bootcamp. It has information on logistics, software installation, and is the master repository for materials for the modules.
+This [website](https://berkeley-scf.github.io/r-bootcamp-fall-2023) and the associated GitHub site ([https://github.com/berkeley-scf/r-bootcamp-fall-2023](https://github.com/berkeley-scf/r-bootcamp-fall-2023)) is the main site for the bootcamp. It has information on logistics, software installation, and is the master repository for materials for the modules.
 
 We have an [Ed Discussion site](https://edstem.org/us/courses/24442) for discussion and answering questions online during (and before) the bootcamp. 
 
@@ -28,7 +28,7 @@ Many of the modules will use a common dataset as an example on which to carry ou
  - Or feel free to just ask the presenter during the presentation.
  - The counselors will also be monitoring the Ed Discussion site, so feel free to type in a question there and one of the counselors will answer the question. Or if you know the answer, help us out by answering it yourself or adding your thoughts. 
 
-Your counseloRs are: Alan Aw (Statistics), Florica Constantine (Statistics), Corrine Elliott (Statistics), and Natalia Sarabia Vasquez (Statistics).
+Your counseloRs are: Will Torous (Statistics), Austin Zane (Statistics), and TBD.
 
 # Suggestions on how to get the most out of the bootcamp
 
@@ -51,7 +51,7 @@ A few additional thoughts on my pedagogical philosophy here:
 
 # RStudio and R Markdown
 
-We'll present most of the material from within RStudio, using R Markdown documents with embedded R code. R Markdown is an extension to the Markdown markup language that makes it easy to write HTML in a simple plain text format.  This allows us to both run the R code directly as well as compile on-the-fly to an HTML file that can be used for presentation. All files will be available on [GitHub](https://github.com/berkeley-scf/r-bootcamp-fall-2022).  
+We'll present most of the material from within RStudio, using R Markdown documents with embedded R code. R Markdown is an extension to the Markdown markup language that makes it easy to write HTML in a simple plain text format.  This allows us to both run the R code directly as well as compile on-the-fly to an HTML file that can be used for presentation. All files will be available on [GitHub](https://github.com/berkeley-scf/r-bootcamp-fall-2023).  
 
 Note: The files named *moduleX_blah.html* have individual slides, while the files named *moduleX_blah_onepage.html* have the same content but all on one page.
 
@@ -65,8 +65,8 @@ To download the files from GitHub, you can do the following.
 
 Within RStudio go to File->New Project->Version Control->Git and enter:
 
-- "Repository URL": https://github.com/berkeley-scf/r-bootcamp-fall-2022
-- "Project Directory Name": r-bootcamp-fall-2022 (or something else of your choosing)
+- "Repository URL": https://github.com/berkeley-scf/r-bootcamp-fall-2023
+- "Project Directory Name": r-bootcamp-fall-2023 (or something else of your choosing)
 - "Directory": ~/Desktop (or somewhere of your choosing)
 
 Then to update from the repository to get any changes we've made, you can select (from within RStudio):
@@ -81,16 +81,16 @@ Be warned that you probably do not want to make your own notes or changes to the
 Run the following commands:
 
 - `cd /directory/where/you/want/repository/located`
-- `git clone https://github.com/berkeley-scf/r-bootcamp-fall-2022`
+- `git clone https://github.com/berkeley-scf/r-bootcamp-fall-2023`
 
 Then to update from the repository to get any changes we've made:
 
-- `cd /directory/where/you/put/the/repository/r-bootcamp-fall-2022`
+- `cd /directory/where/you/put/the/repository/r-bootcamp-fall-2023`
 - `git pull`
 
 ## As a zip file
 
-If you don't want to bother using Git or have problems, simply download a zip file with all the material from [https://github.com/berkeley-scf/r-bootcamp-fall-2022/archive/main.zip](https://github.com/berkeley-scf/r-bootcamp-fall-2022/archive/main.zip).
+If you don't want to bother using Git or have problems, simply download a zip file with all the material from [https://github.com/berkeley-scf/r-bootcamp-fall-2023/archive/main.zip](https://github.com/berkeley-scf/r-bootcamp-fall-2023/archive/main.zip).
 
 # What is R?
 
@@ -176,7 +176,8 @@ The building blocks of scientific computing include:
 # Thanks!  
 
 * To all the presenters and assistants.
-* To the Statistics Department and the Statewide Database at Berkeley Law for sponsorship and logistical support.
+* To the Statistics Department for sponsorship and logistical support.
+* To Golden Bears Orientation (GBO) for making the room available to us.
 
 # We want your feedback (even if you leave early)!
 

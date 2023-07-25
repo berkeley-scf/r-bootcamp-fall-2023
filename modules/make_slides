@@ -4,16 +4,15 @@
 # ./make_slides module1_basics
 # etc.
 
-library(knitr)
+library(rmarkdown)
 
 module <- commandArgs(trailingOnly = TRUE)
 source <- paste(module, ".Rmd", sep = "")
 
 if (file.exists(source)){
-    knit(source, envir = new.env())
-    knit2html(source, envir = new.env())
+    render(source, envir = new.env())
     file.rename(paste(module, ".html", sep = ""), paste(module, "_onepage", ".html", sep = ""))
-    system(paste("pandoc -s --webtex -t slidy ", paste(module, ".md", sep = ""), " -o ", paste(module, ".html", sep = ""), " --self-contained"))
+    system(paste("pandoc -s --webtex -t slidy ", paste(module, ".md", sep = ""), " -o ", paste(module, ".html", sep = ""), " --embed-resources --standalone"))
 } else {
     cat("Error: ", source, "does not exist.\n")
 }

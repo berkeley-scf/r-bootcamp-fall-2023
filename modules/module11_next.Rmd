@@ -61,5 +61,5 @@ Specific aspects of R:
 # Thanks!  
 
 * To all of the Statistics presenters and assistants.
-* To the Statistics Department and the Statewide Database at Berkeley Law for sponsorship and logistical support.
+* To the Statistics Department for sponsorship and logistical support.
 
