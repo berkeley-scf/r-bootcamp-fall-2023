@@ -12,8 +12,8 @@ for discussion of solutions.
  
 - Day 1 morning (8:30-12:15) (learning R)
 
-  - [Module 0](r-bootcamp-fall-2023/modules/module0_induction): Introduction, what is R, starting R, why R? (Chris) (15 minutes)
-  - [Module 1](foo/modules/module1_basics): Basics of R, with RStudio (Chris presents)
+  - [Module 0](modules/module0_induction): Introduction, what is R, starting R, why R? (Chris) (15 minutes)
+  - [Module 1](modules/module1_basics): Basics of R, with RStudio (Chris presents)
     * R as a calculator
     * helpful shortcuts: tab-complete, up arrow, Ctrl-{up arrow}
     * vectors, indexing, and subset assignment
@@ -23,7 +23,7 @@ for discussion of solutions.
     * basic graphics
     * breakout problems
   - Break (15 minutes)
-  - [Module 2](/modules/module2_managingR): Managing R and your analyses (Chris presents)
+  - [Module 2](modules//module2_managingR): Managing R and your analyses (Chris presents)
     * managing R objects, the R workspace
     * using packages (installing, loading, namespaces)
     * the working directory
