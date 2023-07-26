@@ -32,7 +32,7 @@ The workshop doesn't assume any specific R knowledge and starts from the very ba
 
 In prior years, we've had two tracks, with one track serving to provide a slower pace for those with no experience with R or other programming languages. Unfortunately, this year we do not have staffing to support two tracks.
 
-If you have no R experience and little programming experience in other languages, **you are likely to find the pace too quick**. Therefore we recommend that you attend one of the [D-Lab](https://dlab.berkeley.edu)'s R Fundamentals workshops. In particular there is [a workshop the week of August 14 [TBD]](https://dlab.berkeley.edu/events/r-fundamentals-parts-1-4/2023-08-14) (the week before classes start) as well as workshops later in the semester. 
+If you have no R experience and little programming experience in other languages, **you are likely to find the pace too quick**. Therefore we recommend that you attend one of the [D-Lab](https://dlab.berkeley.edu)'s R Fundamentals workshops. In particular there is [a workshop the week of August 14](https://dlab.berkeley.edu/events/r-fundamentals-parts-1-4/2023-08-14) (the week before classes start) as well as workshops later in the semester. 
 
 ## Registration
 
@@ -64,14 +64,10 @@ You will probably want to [make sure you can use the campus WiFi (EduRoam)](http
 
 The [schedule for the bootcamp](schedule) including links to all the modules.
 
-The schedule will be similar to [the schedule from 2022](https://berkeley-scf.github.io/r-bootcamp-fall-2022/schedule/).
-
 
 ## Preparing for the course - course content
 
 WARNING: This material is under construction, with various (but not huge) edits to the content expected. We'll be making edits up until a few days before the event.
-
-For a full set of material similar to what will be presented please see the [material from 2022](https://berkeley-scf.github.io/r-bootcamp-fall-2022/schedule/).
 
 Course content is available through GitHub. Please download a copy of the course materials before arriving at the bootcamp using one of the two options below (if you're familiar with Git you'll also know how to do this by cloning the repository):
 

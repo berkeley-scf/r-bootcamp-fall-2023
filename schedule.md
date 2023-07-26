@@ -1,8 +1,8 @@
 # 2022 R bootcamp schedule
   
 
-The bootcamp will be held August 19-20, so Day 1 is August 19 and 
-Day 2 is August 20.
+The bootcamp will be held August 19-20, so Day 1 is Saturday, August 19 and 
+Day 2 is Saturday, August 20.
 
 Unless otherwise noted, modules are about 75 minutes long: 40 
 minutes for presentation, 25 minutes for breakout and 10 minutes 
