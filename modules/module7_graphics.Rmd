@@ -431,6 +431,32 @@ How many variables have we represented? If we used a trellis plot we could repre
 7) gapminder %>% ggplot() + geom_point(aes(x = gdpPercap, y = lifeExp, shape = country), show.legend = FALSE)
 
 
+# Where do I put `aes()`? (optional)
+
+As seen in the code snippets in the quick quiz, one can put `aes()` in the original `ggplot()` call or in latter `geom_x()` calls. What's the difference?
+
+If one puts `aes()` in `ggplot()`, it affects all subsequent calls that are part of the same ggplot expression.
+
+If one puts `aes(0` in a `geom_x()`, it affects only that particular component of the plotting.
+
+So where you put it affects the "scope" of what it affects.
+
+```{r}
+gapminder %>% filter(continent == "Oceania") %>%
+          ggplot(aes(x = year, y = gdpPercap, color = country)) +
+          geom_line() + geom_point()
+
+gapminder %>% filter(continent == "Oceania") %>%
+          ggplot(aes(x = year, y = gdpPercap)) +
+          geom_line(aes(color = country)) + geom_point()
+
+# Yikes, this doesn't work right:
+gapminder %>% filter(continent == "Oceania") %>%
+          ggplot(aes(x = year, y = gdpPercap)) +
+          geom_point(aes(color = country)) + geom_line()
+```
+
+
 # Scaling Aesthetics
 
 Aesthetics are handled by their very own `scale` functions which allow you to set
