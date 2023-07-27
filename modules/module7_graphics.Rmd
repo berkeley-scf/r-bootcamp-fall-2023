@@ -249,6 +249,8 @@ gapminder %>%
 
 We've already seen these initial ones.
 
+These are provided for reference -- we won't spend time on each one.
+
 X-Y scatter plots: `geom_point()`
 
 ```{r, fig.cap=" ", warning=FALSE, fig.show = "hold"}
@@ -536,7 +538,7 @@ ggplot(data = gapminder, aes(x = gdpPercap, y = lifeExp)) +
             geom_point(color = "red") 
 ```
 
-### Point Styles and Widths
+### Point Styles and Widths (optional)
 
 ```{r, fig.cap=" ", warning=FALSE, fig.show = "hold"}
 ggplot(data = gapminder, aes(x = gdpPercap, y = lifeExp)) +
@@ -547,7 +549,7 @@ ggplot(data = gapminder, aes(x = gdpPercap, y = lifeExp)) +
             geom_point(shape = "$", size=5) 
 ```
 
-### Line Styles and Widths
+### Line Styles and Widths (optional)
 
 ```{r, fig.cap=" ", warning=FALSE, fig.show = "hold"}
 ggplot(data = gapChina, aes(x = year, y = lifeExp)) +
