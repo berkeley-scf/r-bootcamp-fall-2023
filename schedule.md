@@ -1,4 +1,4 @@
-# 2022 R bootcamp schedule
+# 2023 R bootcamp schedule
   
 
 The bootcamp will be held August 19-20, so Day 1 is Saturday, August 19 and 
