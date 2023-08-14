@@ -1,5 +1,5 @@
 % R bootcamp, Module 9: Workflows, managing projects and good practices
-% August 2022, UC Berkeley
+% August 2023, UC Berkeley
 % Chris Paciorek
 
 ```{r chunksetup, include=FALSE} 
@@ -72,9 +72,9 @@ findGlobals(f)
 ```{r}
 mat <- matrix(1:4, 2, 2)[1, ]
 dim(mat); print(mat)
-colSums(mat)
+# colSums(mat)   # Fails!
 mat <- matrix(1:4, 2, 2)[1, , drop = FALSE]
-colSums(mat)
+colSums(mat)     # Succeeds!
 ```
 
 # Debugging
@@ -87,7 +87,7 @@ out problems, particularly for more complicated situations.
 Let's briefly see these in action. I'll demo this in a very basic way, but hopefully this
 will give you an idea of the power of these tools.
 
-```{r}
+```{r, error=TRUE}
 buggyFun <- function(myDF) {
    print(names(myDF))
    myDF$id <- seq_len(nrow(myDF))

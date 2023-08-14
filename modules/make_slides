@@ -10,9 +10,9 @@ module <- commandArgs(trailingOnly = TRUE)
 source <- paste(module, ".Rmd", sep = "")
 
 if (file.exists(source)){
-    render(source, envir = new.env())
+    render(source, envir = new.env(), clean = FALSE)
     file.rename(paste(module, ".html", sep = ""), paste(module, "_onepage", ".html", sep = ""))
-    system(paste("pandoc -s --webtex -t slidy ", paste(module, ".md", sep = ""), " -o ", paste(module, ".html", sep = ""), " --embed-resources --standalone"))
+    system(paste("pandoc -s --webtex -t slidy ", paste(module, ".knit.md", sep = ""), " -o ", paste(module, ".html", sep = ""), " --embed-resources --standalone"))
 } else {
     cat("Error: ", source, "does not exist.\n")
 }

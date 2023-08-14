@@ -1,5 +1,5 @@
 % R bootcamp, Module 10: Advanced topics
-% August 2022, UC Berkeley
+% August 2023, UC Berkeley
 % Chris Paciorek
 
 ```{r chunksetup, include=FALSE} 
@@ -128,8 +128,8 @@ fm1 <- lmer(Reaction ~ Days + (Days|Subject), sleepstudy)
 class(fm1)
 methods(class = "lmerMod")
 slotNames(fm1)
-fm1$theta
-fm1@theta
+# fm1$theta  # Incorrect syntax.
+fm1@theta    # Correct syntax.
 ```
 
 # Brief introduction to R6 Classes
@@ -209,9 +209,10 @@ set.seed(1)
 y <- my_ts$simulate()   # generate a time series
 plot(my_ts$getTimes(), y, type = 'l', xlab = 'time',
       ylab = 'process values')
-## We can't directly access private fields or methods
-my_ts$times
-my_ts$calcMats()
+## We can't directly access private fields or methods.
+## These will fail:
+# my_ts$times
+# my_ts$calcMats()
 
 my_ts <- tsSimClass$new(1:100, 2, 3)
 set.seed(1)
@@ -229,7 +230,7 @@ When you write your own functions, and particularly for distributing to others, 
 
 We can use `stop()` and `warning()` to do this. They're the same functions that are being called when you see an error message or a warning in reaction to your own work in R.
 
-```{r}
+```{r, error=TRUE}
 mysqrt <- function(x) {
   if(is.list(x)) {
     warning("x is a list; converting to a vector")
@@ -273,7 +274,7 @@ Suppose we tried to do a stratified analysis of life expectancy on GDP within co
 For the purpose of illustration, I'm going to monkey a bit with the data such that there is an error in fitting Oceania. This is artificial, but when you stratify data into smaller groups it's not uncommon that the analysis can fail for one of the groups (often because of small sample size or missing data).
 
 
-```{r}
+```{r, error=TRUE}
 mod <- list()
 fakedat <- gapminder[gapminder$year == 2007, ]
 fakedat$gdpPercap[fakedat$continent == 'Oceania'] <- NA
@@ -292,6 +293,8 @@ What happened?
 
 ```{r}
 mod <- list()
+fakedat <- gapminder[gapminder$year == 2007, ]
+fakedat$gdpPercap[fakedat$continent == 'Oceania'] <- NA
 
 for(cont in c('Asia', 'Oceania', 'Europe', 'Americas', 'Africa')) {
             cat("Fitting model for continent ", cont, ".\n")
@@ -332,7 +335,7 @@ print(x)
 code <- quote(n <- 100)
 code
 class(code)
-n
+exists('n')
 
 eval(code)
 n

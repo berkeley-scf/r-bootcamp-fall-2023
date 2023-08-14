@@ -1,5 +1,5 @@
 % R bootcamp, Module 2: Managing R and R resources
-% August 2022, UC Berkeley
+% August 2023, UC Berkeley
 % Chris Paciorek
 
 ```{r chunksetup, include=FALSE} 
@@ -245,20 +245,20 @@ To read and write from R, you need to have a firm grasp of where in the computer
 getwd()
 
 ## Changing the working directory (Linux/Mac specific)
-setwd('~/Desktop/r-bootcamp-fall-2022') # change the working directory
+setwd('~/Desktop/r-bootcamp-fall-2023') # change the working directory
 setwd('/Users/paciorek/Desktop') # absolute path
 getwd()
-setwd('r-bootcamp-fall-2022/modules') # relative path
+setwd('r-bootcamp-fall-2023/modules') # relative path
 setwd('../tmp') # relative path, up and back down the tree
 
 ## Changing the working directory (Windows specific)
 ## Windows - use either \\ or / to indicate directories
-# setwd('C:\\Users\\Your_username\\Desktop\\r-bootcamp-fall-2022')
-# setwd('..\\r-bootcamp-fall-2022')
+# setwd('C:\\Users\\Your_username\\Desktop\\r-bootcamp-fall-2023')
+# setwd('..\\r-bootcamp-fall-2023')
 
 ## Changing the working directory (platform-agnostic)
-setwd(file.path('~', 'Desktop', 'r-bootcamp-fall-2022', 'modules')) # change the working directory
-setwd(file.path('/', 'Users', 'paciorek', 'Desktop', 'r-bootcamp-fall-2022', 'modules')) # absolute path
+setwd(file.path('~', 'Desktop', 'r-bootcamp-fall-2023', 'modules')) # change the working directory
+setwd(file.path('/', 'Users', 'paciorek', 'Desktop', 'r-bootcamp-fall-2023', 'modules')) # absolute path
 getwd()
 setwd(file.path('..', 'data')) # relative path
 ```
@@ -278,7 +278,7 @@ Suppose I am on a Mac that has the following directories:
 Users
 --paciorek
 ----Desktop
-------r-bootcamp-fall-2022
+------r-bootcamp-fall-2023
 --------data
 --------modules
 --------schedule
@@ -287,35 +287,35 @@ Users
 
 Which of the following use relative paths?
 
-1) setwd('Users/paciorek/Desktop/r-bootcamp-fall-2022/data')
-2) setwd('/Users/paciorek/Desktop/r-bootcamp-fall-2022/data')
+1) setwd('Users/paciorek/Desktop/r-bootcamp-fall-2023/data')
+2) setwd('/Users/paciorek/Desktop/r-bootcamp-fall-2023/data')
 3) setwd('data')
 4) setwd('../data')
-5) setwd('~paciorek/Desktop/r-bootcamp-fall-2022/data')
-6) setwd('paciorek', 'Desktop/r-bootcamp-fall-2022/data')
+5) setwd('~paciorek/Desktop/r-bootcamp-fall-2023/data')
+6) setwd('paciorek', 'Desktop/r-bootcamp-fall-2023/data')
 7) setwd('./data')
-8) setwd('Desktop/r-bootcamp-fall-2022/data')
+8) setwd('Desktop/r-bootcamp-fall-2023/data')
 
 
 **[P](https://www.polleverywhere.com/multiple_choice_polls/bfvk2xcxBma160uubRaos)OLL 2C**:
 
 Suppose my current working directory is:
 
-`/Users/paciorek/Desktop/r-bootcamp-fall-2022/modules`.
+`/Users/paciorek/Desktop/r-bootcamp-fall-2023/modules`.
 
 Windows users, just think of this as being:
-`C:\Users\paciorek\Desktop\r-bootcamp-fall-2022\modules`.
+`C:\Users\paciorek\Desktop\r-bootcamp-fall-2023\modules`.
 
 Which of the following will allow me to change to the 'data' subdirectory?
 
-1) setwd('Users/paciorek/Desktop/r-bootcamp-fall-2022/data')
-2) setwd('/Users/paciorek/Desktop/r-bootcamp-fall-2022/data')
+1) setwd('Users/paciorek/Desktop/r-bootcamp-fall-2023/data')
+2) setwd('/Users/paciorek/Desktop/r-bootcamp-fall-2023/data')
 3) setwd('data')
 4) setwd('../data')
-5) setwd('~paciorek/Desktop/r-bootcamp-fall-2022/data')
-6) setwd('paciorek', 'Desktop/r-bootcamp-fall-2022/data')
+5) setwd('~paciorek/Desktop/r-bootcamp-fall-2023/data')
+6) setwd('paciorek', 'Desktop/r-bootcamp-fall-2023/data')
 7) setwd('./data')
-8) setwd('Desktop/r-bootcamp-fall-2022/data')
+8) setwd('Desktop/r-bootcamp-fall-2023/data')
 
 # Reading text files into R
 
@@ -447,7 +447,7 @@ As you're gathering by now, I've used Git and GitHub to manage all the content f
 
 ### Making changes to a repository
 
-We'll go through a short example of making changes to the r-bootcamp-fall-2022 repository. In this case you don't have permission to make changes so you'll just have to follow along as I do it. However, you could start your own repository and then you'd be able to do similar things.
+We'll go through a short example of making changes to the r-bootcamp-fall-2023 repository. In this case you don't have permission to make changes so you'll just have to follow along as I do it. However, you could start your own repository and then you'd be able to do similar things.
 
 Note that there are [graphical interfaces to Git](https://git-scm.com/downloads/guis) that you might want to check out, but here I'm just going to do it from the command line on my Mac.
 
@@ -471,6 +471,14 @@ The changes are then available to anyone to *pull* from the remote repository, a
 
 
 # Getting R help online (optional)
+
+### ChatGPT
+
+I've had good luck translating between R and Python using ChatGPT.
+
+Another good use case for ChatGPT is asking how to do basic operations when you don't know the name of the function in R.
+
+Of course given ChatGPT's well-known over-optimism, you should always check carefully that the code it provides works as expected.
 
 ### Mailing lists
 

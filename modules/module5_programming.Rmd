@@ -1,6 +1,6 @@
 % R bootcamp, Module 5: Programming
-% August 2022, UC Berkeley
-% Chris Paciorek
+% August 2023, UC Berkeley
+% Will Torous
 
 ```{r chunksetup, include=FALSE}
 # include any code here you don't want to show up in the document,
@@ -378,9 +378,9 @@ if (val < 0) print("val is negative") else print("val is positive")
 # The condition in an if statement
 
 The condition in the if statement cannot be NA or R will give an error. This is
-a very common bug.
+a very common bug. I haven't run this code in the rendered HTML, but we can run it together.
 
-```{r, if-bug}
+```{r, if-bug, error=TRUE}
 continents <- unique(gapminder$continent)
 continents  
 
@@ -409,6 +409,9 @@ strings are not converted to booleans.
 A more robust alternative is to use `isTRUE()`:
 
 ```{r, if-bug-fix}
+continents <- unique(as.character(gapminder$continent))
+continents <- c('Antarctica', continents)
+
 out <- rep(0, length(continents))
 for (i in seq_along(continents)) {
     sub <- gapminder[gapminder$continent == continents[i], ]
@@ -419,7 +422,7 @@ for (i in seq_along(continents)) {
 
 Here's another example. What will this return?
 
-```
+```{r, eval=FALSE}
 if(sqrt(-1) == 0i) {
    print('i')
 } else print('not i')

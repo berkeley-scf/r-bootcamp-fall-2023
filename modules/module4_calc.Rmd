@@ -1,6 +1,6 @@
 % R bootcamp, Module 4: Calculations
-% August 2022, UC Berkeley
-% Alan Aw
+% August 2023, UC Berkeley
+% Chris Paciorek
 
 ```{r chunksetup, include=FALSE} 
 # include any code here you don't want to show up in the document,
@@ -34,7 +34,7 @@ vec1 = vec2
 identical(vec1, vec2)
 
 ## using 'or'
-gdpSubset >= 100000 | gdpSubset <= 1000
+gapminder$gdpPercap[1:10] >= 100000 | gapminder$gdpPercap[1:10] <= 1000
 ## using 'and'
 gapminder$gdpPercap[1:10] >= 100000 & gapminder$continent[1:10] == "Asia"
 ```

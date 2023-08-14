@@ -1,5 +1,5 @@
 % R bootcamp, Module 8: Analysis
-% August 2022, UC Berkeley
+% August 2023, UC Berkeley
 % Chris Paciorek
 
 ```{r chunksetup, include=FALSE} 
@@ -337,7 +337,7 @@ unclass(dates)
 
 # Time too!
 
-```{r}
+```{r, error=TRUE}
 library(chron)
 d1 <- chron("12/25/2004", "10:37:59") 
 # default format of m/d/Y and h:m:s
@@ -347,7 +347,7 @@ class(d1)
 d1
 d1 + 33
 d2 - d1
-d1 + d2
+d1 + d2  # This won't work.
 ```
 
 There's lots more packages/functionality for dates/times: see *lubridate* and `?DateTimeClasses`

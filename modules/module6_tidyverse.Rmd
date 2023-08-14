@@ -1,6 +1,6 @@
 % R Bootcamp, Module 6: Data manipulation with the `tidyverse`
-% August 2022, UC Berkeley
-% Corrine Elliott
+% August 2023, UC Berkeley
+% Chris Paciorek
 
 
 ```{r chunksetup, include=FALSE}
@@ -115,7 +115,7 @@ understand what is being done!
 
 To be more readable without pipes, we might break up this code into intermediate objects... 
 
-```{r, eval = F}
+```{r, eval=FALSE}
 # NOT run
 batter <- mix(ingredients)
 muffin_tin <- pour(batter)
@@ -144,9 +144,10 @@ cupcakes <- ingredients %>%
   bake()
 ```
 
+**Tip**: As of R 4.1.0, you can use `|>` from base R without needing to load dplyr.
+
 **Pro Tip**: In RStudio the hotkey for the pipe is Ctrl + Shift + M. 
 
-**R Update**: If you have R 4.1.0 or later, you can use `|>` from base R without needing to load dplyr.
 
 # `select` & Pipe (`%>%`)
 Since the pipe grammar is unlike anything we've seen in R before, let's repeat what 
@@ -381,13 +382,13 @@ The use of data frame variables without quotes around them is an example of this
 
 Why is this strange?
 
-```{r, eval = FALSE}
+```{r, eval=FALSE}
 gapminder %>% select(continent, year) %>% tail()
 ```
 
 Compare it to:
 
-```{r, eval = F}
+```{r, eval=FALSE}
 gapminder[ , c('continent', 'year')]
 gapminder[ , continent]
 ```
@@ -396,7 +397,7 @@ Because `continent` and `year` are not variables our current environment! dplyr 
 
 This is fine if you have a data analysis workflow but if you want to write a function that, for example, selects an arbitrary set of columns, you'll run into trouble.
 
-```{r, eval = F}
+```{r, eval=FALSE}
 ## here's a helper function that computes the mean of a variable, stratifying by a grouping variable
 grouped_mean <- function(data, group_var, summary_var) {
   data %>%
@@ -606,7 +607,7 @@ There are some other useful packages in the [tidyverse](http://www.tidyverse.org
 * many many more! Take a peak at the [tidyverse github page](https://github.com/tidyverse)...
 
 **Pro Tip:** To install and load the core tidyverse packages (includes `tidyr`, `dplyr`, and `ggplot2`, among others), try:
-```{r, eval = F}
+```{r, eval=FALSE}
 # NOT run
 install.packages("tidyverse")
 library(tidyverse)

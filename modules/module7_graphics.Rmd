@@ -1,6 +1,6 @@
 % R Bootcamp, Module 7: Graphics
-% August 2022, UC Berkeley
-% Florica Constantine
+% August 2023, UC Berkeley
+% Austin Zane
 
 ```{r chunksetup, include=FALSE}
 knitr::opts_chunk$set(fig.cap = " ", warning=FALSE, fig.show = "hold")
@@ -514,7 +514,7 @@ ggplot(data = gapminder2007, aes(x = gdpPercap, y = lifeExp)) + geom_point() +
 
 Or even more simply use the `labs()` function
 
-```{r, eval = F}
+```{r, eval=FALSE}
 ggplot(data = gapminder2007, aes(x = gdpPercap, y = lifeExp)) + geom_point() +
   labs(x = "GDP per capita", y = "Life expectancy", title = "Gapminder")
 ```

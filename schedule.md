@@ -12,7 +12,7 @@ for discussion of solutions.
  
 - Day 1 morning (8:30-12:15) (learning R)
 
-  - [Module 0](modules/module0_induction): Introduction, what is R, starting R, why R? (Chris) (15 minutes)
+  - [Module 0](modules/module0_induction): Introduction, what is R, starting R, why R? (Chris presents) (15 minutes)
   - [Module 1](modules/module1_basics): Basics of R, with RStudio (Chris presents)
     * R as a calculator
     * helpful shortcuts: tab-complete, up arrow, Ctrl-{up arrow}
@@ -42,7 +42,7 @@ for discussion of solutions.
 - Day 1 afternoon (1:30-5:00) (data processing and manipulation)
 
   - Finish Module 3 as needed
-  - [Module 4](modules/module4_calc): Calculations (TBD presents)
+  - [Module 4](modules/module4_calc): Calculations (Chris presents)
     * vectorized calculations and efficiency
     * apply, lapply (map operations)
     * tabulation, stratified analyses, 
@@ -59,13 +59,13 @@ for discussion of solutions.
 
 - Day 2 morning (9-12:45) (programming and data analysis)
 
-  - [Module 6](modules/module6_tidyverse): Data manipulation using the tidyverse (TBD presents)
+  - [Module 6](modules/module6_tidyverse): Data manipulation using the tidyverse (Chris presents)
     * dplyr overview and piping
     * stratified analyses: groupwise operations and split-apply-combine using dplyr
     * reshaping and tidying data
     * breakout problems
   - Break (15 minutes)
-  - [Module 7](modules/module7_graphics): Graphics (TBD presents)
+  - [Module 7](modules/module7_graphics): Graphics (Austin presents)
     * base R and ggplot2 overview
     * ggplot2 basics
     * using aesthetics to control plotting
