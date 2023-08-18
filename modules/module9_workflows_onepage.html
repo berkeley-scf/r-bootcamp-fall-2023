@@ -576,70 +576,68 @@ library(proftools)
 pd1 &lt;- profileExpr(lr_slow(y, x))
 hotPaths(pd1)</code></pre>
 <pre><code>##  path                total.pct self.pct
-##  lazyLoadDBfetch     11.48      0.00   
-##  . &lt;Anonymous&gt;       11.48      0.00   
-##  . . lazyLoadDBfetch 11.48     11.48   
-##  lr_slow             88.52      0.00   
-##  . %*% (&lt;text&gt;:2)    13.33     13.33   
-##  . %*% (&lt;text&gt;:3)     0.74      0.74   
-##  . %*% (&lt;text&gt;:5)     0.74      0.74   
-##  . solve (&lt;text&gt;:4)  66.67      0.00   
-##  . . solve.default   66.67     66.30   
-##  . . . diag           0.37      0.37   
-##  . t (&lt;text&gt;:2)       1.11      0.00   
-##  . . t.default        1.11      1.11   
-##  . t (&lt;text&gt;:3)       5.93      0.00   
-##  . . t.default        5.93      5.93</code></pre>
+##  lazyLoadDBfetch     32.99      0.00   
+##  . &lt;Anonymous&gt;       32.99      0.00   
+##  . . lazyLoadDBfetch 32.99     32.99   
+##  lr_slow             67.01      0.00   
+##  . %*% (&lt;text&gt;:2)    19.59     19.59   
+##  . %*% (&lt;text&gt;:3)     3.09      3.09   
+##  . %*% (&lt;text&gt;:5)     1.03      1.03   
+##  . solve (&lt;text&gt;:4)  23.71      0.00   
+##  . . solve.default   23.71     22.68   
+##  . . . diag           1.03      1.03   
+##  . t (&lt;text&gt;:2)       1.03      0.00   
+##  . . t.default        1.03      1.03   
+##  . t (&lt;text&gt;:3)      18.56      0.00   
+##  . . t.default       18.56     18.56</code></pre>
 <pre class="r"><code>hotPaths(pd1, value = &#39;time&#39;)</code></pre>
 <pre><code>##  path                total.time self.time
-##  lazyLoadDBfetch     0.62       0.00     
-##  . &lt;Anonymous&gt;       0.62       0.00     
-##  . . lazyLoadDBfetch 0.62       0.62     
-##  lr_slow             4.78       0.00     
-##  . %*% (&lt;text&gt;:2)    0.72       0.72     
-##  . %*% (&lt;text&gt;:3)    0.04       0.04     
-##  . %*% (&lt;text&gt;:5)    0.04       0.04     
-##  . solve (&lt;text&gt;:4)  3.60       0.00     
-##  . . solve.default   3.60       3.58     
+##  lazyLoadDBfetch     0.64       0.00     
+##  . &lt;Anonymous&gt;       0.64       0.00     
+##  . . lazyLoadDBfetch 0.64       0.64     
+##  lr_slow             1.30       0.00     
+##  . %*% (&lt;text&gt;:2)    0.38       0.38     
+##  . %*% (&lt;text&gt;:3)    0.06       0.06     
+##  . %*% (&lt;text&gt;:5)    0.02       0.02     
+##  . solve (&lt;text&gt;:4)  0.46       0.00     
+##  . . solve.default   0.46       0.44     
 ##  . . . diag          0.02       0.02     
-##  . t (&lt;text&gt;:2)      0.06       0.00     
-##  . . t.default       0.06       0.06     
-##  . t (&lt;text&gt;:3)      0.32       0.00     
-##  . . t.default       0.32       0.32</code></pre>
+##  . t (&lt;text&gt;:2)      0.02       0.00     
+##  . . t.default       0.02       0.02     
+##  . t (&lt;text&gt;:3)      0.36       0.00     
+##  . . t.default       0.36       0.36</code></pre>
 <pre class="r"><code>pd2 &lt;- profileExpr(lr_medium(y, x))
 hotPaths(pd2)</code></pre>
 <pre><code>##  path                    total.pct self.pct
 ##  lr_medium               100.00     0.00   
-##  . crossprod (&lt;text&gt;:10)   7.69     7.69   
-##  . crossprod (&lt;text&gt;:9)   48.72    48.72   
-##  . solve (&lt;text&gt;:11)      43.59     0.00   
-##  . . solve.default        43.59    41.03   
-##  . . . diag                2.56     2.56</code></pre>
+##  . crossprod (&lt;text&gt;:10)   7.89     7.89   
+##  . crossprod (&lt;text&gt;:9)   50.00    50.00   
+##  . solve (&lt;text&gt;:11)      42.11     0.00   
+##  . . solve.default        42.11    36.84   
+##  . . . diag                5.26     5.26</code></pre>
 <pre class="r"><code>hotPaths(pd2, value = &#39;time&#39;)</code></pre>
 <pre><code>##  path                    total.time self.time
-##  lr_medium               0.78       0.00     
+##  lr_medium               0.76       0.00     
 ##  . crossprod (&lt;text&gt;:10) 0.06       0.06     
 ##  . crossprod (&lt;text&gt;:9)  0.38       0.38     
-##  . solve (&lt;text&gt;:11)     0.34       0.00     
-##  . . solve.default       0.34       0.32     
-##  . . . diag              0.02       0.02</code></pre>
+##  . solve (&lt;text&gt;:11)     0.32       0.00     
+##  . . solve.default       0.32       0.28     
+##  . . . diag              0.04       0.04</code></pre>
 <pre class="r"><code>pd3 &lt;- profileExpr(lr_fast(y, x))
 hotPaths(pd3)</code></pre>
 <pre><code>##  path                    total.pct self.pct
-##  lazyLoadDBfetch          2.70      2.70   
-##  lr_fast                 97.30      0.00   
-##  . chol (&lt;text&gt;:18)      32.43      0.00   
-##  . . chol.default        32.43     32.43   
-##  . crossprod (&lt;text&gt;:16) 62.16     62.16   
-##  . crossprod (&lt;text&gt;:17)  2.70      2.70</code></pre>
+##  lr_fast                 100.00     0.00   
+##  . chol (&lt;text&gt;:18)       15.79     0.00   
+##  . . chol.default         15.79    15.79   
+##  . crossprod (&lt;text&gt;:16)  73.68    73.68   
+##  . crossprod (&lt;text&gt;:17)  10.53    10.53</code></pre>
 <pre class="r"><code>hotPaths(pd3, value = &#39;time&#39;)</code></pre>
 <pre><code>##  path                    total.time self.time
-##  lazyLoadDBfetch         0.02       0.02     
-##  lr_fast                 0.72       0.00     
-##  . chol (&lt;text&gt;:18)      0.24       0.00     
-##  . . chol.default        0.24       0.24     
-##  . crossprod (&lt;text&gt;:16) 0.46       0.46     
-##  . crossprod (&lt;text&gt;:17) 0.02       0.02</code></pre>
+##  lr_fast                 0.38       0.00     
+##  . chol (&lt;text&gt;:18)      0.06       0.00     
+##  . . chol.default        0.06       0.06     
+##  . crossprod (&lt;text&gt;:16) 0.28       0.28     
+##  . crossprod (&lt;text&gt;:17) 0.04       0.04</code></pre>
 <p>You might also check out <em>profvis</em> for an alternative to
 displaying profiling information generated by <em>Rprof</em>.</p>
 </div>
@@ -673,13 +671,13 @@ object.size(x)</code></pre>
 <pre class="r"><code>x &lt;- rnorm(1e8)
 gc()</code></pre>
 <pre><code>##             used  (Mb) gc trigger   (Mb)  max used  (Mb)
-## Ncells    705998  37.8    1251997   66.9   1251997  66.9
-## Vcells 111305984 849.2  177272219 1352.5 121317480 925.6</code></pre>
+## Ncells    705996  37.8    1251997   66.9   1251997  66.9
+## Vcells 111305601 849.2  177271667 1352.5 121317097 925.6</code></pre>
 <pre class="r"><code>rm(x)
 gc()</code></pre>
 <pre><code>##            used (Mb) gc trigger   (Mb)  max used  (Mb)
-## Ncells   706020 37.8    1251997   66.9   1251997  66.9
-## Vcells 11306029 86.3  141817776 1082.0 121317480 925.6</code></pre>
+## Ncells   706018 37.8    1251997   66.9   1251997  66.9
+## Vcells 11305646 86.3  141817334 1082.0 121317097 925.6</code></pre>
 </div>
 <div id="memory-use-quick-quiz" class="section level1">
 <h1>Memory use: quick quiz</h1>
@@ -864,8 +862,8 @@ exact numbers.</li>
 </div>
 <div id="breakout" class="section level1">
 <h1>Breakout</h1>
-<p>Please fill out the feedback survey. See the Ed Discussion board for
-the link.</p>
+<p>Please fill out the <a href="https://forms.gle/xh6omJqMYciY3KNP8">feedback survey</a>. See the
+Ed Discussion board for the link.</p>
 </div>
 
 
