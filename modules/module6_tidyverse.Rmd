@@ -54,14 +54,7 @@ Here we're going to cover 6 of the most commonly used functions as well as using
 5. `mutate()`
 6. `arrange()`
 
-If you have have not installed this package earlier, please do so now:
-
-```{r,eval=FALSE}
-# NOT run
-install.packages('dplyr')
-```
-
-Now let's load the package:
+Let's load the package:
 
 ```{r,message=FALSE}
 library(dplyr)
@@ -85,11 +78,10 @@ year_country_gdp_base <- gapminder[,c("year", "country", "gdpPercap")]
 head(year_country_gdp_base)
 ```
 
-We can even check that these two data frames are equivalent:
+We can even check that these two data frames are the same:
 
 ```{r}
-# checking equivalence: TRUE indicates an exact match between these objects
-all.equal(year_country_gdp_dplyr, year_country_gdp_base)
+identical(year_country_gdp_dplyr, year_country_gdp_base)
 ```
 
 But, as we will see, `dplyr` makes for much more readable, efficient code because of its *pipe* operator.
@@ -260,6 +252,7 @@ A `grouped_df` can be thought of as a `list` where each item in the `list` is a 
 `group_by()` on its own is not particularly interesting.
 It's much more exciting used in conjunction with the `summarize()` function. 
 This will allow use to create new variable(s) by applying transformations to variables in each of the continent-specific data frames.
+
 In other words, using the `group_by()` function, we split our original data frame into multiple pieces, which we then apply summary functions to (e.g., `mean()` or `sd()`) within `summarize()`.
 The output is a new data frame reduced in size, with one row per group.
 
@@ -281,7 +274,7 @@ gdp_bycontinents_byyear <- gapminder %>%
 head(gdp_bycontinents_byyear)
 ```
 
-That is already quite powerful, but it gets even better! You're not limited to defining 1 new variable in `summarize()`.
+That is already quite powerful, but it gets even better! You're not limited to defining one new variable in `summarize()`.
 
 ```{r}
 gdp_pop_bycontinents_byyear <- gapminder %>%
@@ -390,7 +383,7 @@ Compare it to:
 
 ```{r, eval=FALSE}
 gapminder[ , c('continent', 'year')]
-gapminder[ , continent]
+gapminder[ , 'continent']
 ```
 
 Because `continent` and `year` are not variables our current environment! dplyr does some fancy stuff behind the scenes to save us from typing the quotes.
