@@ -272,7 +272,6 @@ out
 
 ## Or, 'in-line' the function:
 
-```{r}
 out <- sapply(1:10, function(x) x^2)
 out
 ```

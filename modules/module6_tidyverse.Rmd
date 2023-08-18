@@ -14,7 +14,7 @@ library(gapminder)
 
 # Overview
 
-> It is often said that 80% of data analysis is spent on the process of cleaning and preparing the data. (Dasu and Johnson, 2003)
+> It is often said that 80% of data analysis is spent on the process of cleaning and preparing the data (Dasu and Johnson, 2003).
 
 Thus before you can even get to doing any sort of sophisticated analysis or plotting, you'll generally first need to:
 

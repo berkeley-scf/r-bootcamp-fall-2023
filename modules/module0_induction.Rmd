@@ -24,7 +24,7 @@ Many of the modules will use a common dataset as an example on which to carry ou
 
 # Getting help
 
- - Counselors will be available to help answer any questions you have (just wave to one of them if you're in person).
+ - Counselors will be available to help answer any questions you have (just wave to one of them).
  - Or feel free to just ask the presenter during the presentation.
  - The counselors will also be monitoring the Ed Discussion site, so feel free to type in a question there and one of the counselors will answer the question. Or if you know the answer, help us out by answering it yourself or adding your thoughts. 
 
@@ -127,7 +127,7 @@ RStudio provides an integrated development environment in which all of these pie
 
 # Why R?
 
-- R is widely used (statisticians, scientists, social scientists) and has the widest statistical functionality of any software
+- R is widely used (statisticians, data scientists, scientists, social scientists) and has the widest statistical functionality of any software, and extensive machine learning functionality.
 - Users add functionality via packages all the time
 - R is free and available on all major platforms
 - As a scripting language, R is very powerful, flexible, and easy to use
@@ -142,6 +142,7 @@ RStudio provides an integrated development environment in which all of these pie
 * Other software is better than R at various tasks
     
     E.g., [Python](http://imgs.xkcd.com/comics/python.png) is very good for text manipulation, interacting with the operating system, and as a glue for tying together various applications/software in a workflow
+    And of course Python is the lingua franca for deep learning via Tensorflow and PyTorch.
 * R can be much slower than compiled languages (but is often quite fast with good coding practices!)
 * R's packages are only as good as the person who wrote them; no explicit quality control
 * R is a sprawling and unstandardized ecosystem
