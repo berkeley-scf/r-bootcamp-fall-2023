@@ -592,7 +592,7 @@ lm(7) </code></pre>
 <pre><code>## [1] 7</code></pre>
 <pre class="r"><code>lm(gapminder$lifeExp ~ gapminder$gdpPercap)</code></pre>
 <pre><code>## gapminder$lifeExp ~ gapminder$gdpPercap
-## &lt;environment: 0x56396ed23320&gt;</code></pre>
+## &lt;environment: 0x56485113f320&gt;</code></pre>
 <pre class="r"><code>stats::lm(gapminder$lifeExp ~ gapminder$gdpPercap)</code></pre>
 <pre><code>## 
 ## Call:
@@ -617,9 +617,9 @@ efficiently.</p>
 in some packages), download and unzip the package source tarball. From
 the command line of a Linux/Mac terminal (note this won’t look right in
 the slides version of the HTML):</p>
-<pre class="bash"><code>curl https://cran.r-project.org/src/contrib/fields_9.6.tar.gz \
-     -o fields_9.6.tar.gz
-tar -xvzf fields_9.6.tar.gz
+<pre class="bash"><code>curl https://cran.r-project.org/src/contrib/fields_14.1.tar.gz \
+     -o fields_14.1.tar.gz
+tar -xvzf fields_14.1.tar.gz
 cd fields
 ls R
 ls src
@@ -868,7 +868,7 @@ default).</p>
 <pre class="r"><code>library(xtable)
 print(xtable(table(gapminder$year, gapminder$continent)), type = &quot;html&quot;)</code></pre>
 <pre><code>## &lt;!-- html table generated in R 4.3.0 by xtable 1.8-4 package --&gt;
-## &lt;!-- Mon Aug 14 14:38:52 2023 --&gt;
+## &lt;!-- Sat Aug 19 12:29:10 2023 --&gt;
 ## &lt;table border=1&gt;
 ## &lt;tr&gt; &lt;th&gt;  &lt;/th&gt; &lt;th&gt; Africa &lt;/th&gt; &lt;th&gt; Americas &lt;/th&gt; &lt;th&gt; Asia &lt;/th&gt; &lt;th&gt; Europe &lt;/th&gt; &lt;th&gt; Oceania &lt;/th&gt;  &lt;/tr&gt;
 ##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 1952 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt;  52 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt;  25 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt;  33 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt;  30 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt;   2 &lt;/td&gt; &lt;/tr&gt;
