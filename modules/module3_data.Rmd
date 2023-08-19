@@ -578,7 +578,7 @@ mat <- matrix(1:16, nrow = 4, ncol = 4)
 
 3) Count the number of gdpPercap values greater than 50000 in the gapminder dataset.
 
-4) Set all of the gdpPercap values greater than 50000 to NA. You should probably first copy the `gap` object and work on the copy so that the dataset is unchanged (or just read the data into R again afterwards to get a clean copy).
+4) Set all of the gdpPercap values greater than 50000 to NA. You should probably first copy the `gapminder` object and work on the copy so that the dataset is unchanged, so that you preserve the original data to use later.
 
 5) Consider the first row of the gapminder dataset, which has Afghanistan for 1952. How do I create a string "Afghanistan-1952" using `gap$country[1]` and `gap$year[1]`? 
 
