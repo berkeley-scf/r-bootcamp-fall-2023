@@ -90,7 +90,7 @@ Then to update from the repository to get any changes we've made:
 
 ## As a zip file
 
-If you don't want to bother using Git or have problems, simply download a zip file with all the material from [https://github.com/berkeley-scf/r-bootcamp-fall-2023/archive/main.zip](https://github.com/berkeley-scf/r-bootcamp-fall-2023/archive/main.zip).
+If you don't want to bother using Git or have problems, simply download a zip file with all the material from [GitHub](https://github.com/berkeley-scf/r-bootcamp-fall-2023/archive/refs/heads/gh-pages.zip)
 
 # What is R?
 
@@ -141,8 +141,8 @@ RStudio provides an integrated development environment in which all of these pie
 
 * Other software is better than R at various tasks
     
-    E.g., [Python](http://imgs.xkcd.com/comics/python.png) is very good for text manipulation, interacting with the operating system, and as a glue for tying together various applications/software in a workflow
-    And of course Python is the lingua franca for deep learning via Tensorflow and PyTorch.
+    - E.g., [Python](http://imgs.xkcd.com/comics/python.png) is very good for text manipulation, interacting with the operating system, and as a glue for tying together various applications/software in a workflow
+    - And of course Python is the lingua franca for deep learning via Tensorflow and PyTorch.
 * R can be much slower than compiled languages (but is often quite fast with good coding practices!)
 * R's packages are only as good as the person who wrote them; no explicit quality control
 * R is a sprawling and unstandardized ecosystem

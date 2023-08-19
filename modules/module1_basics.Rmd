@@ -181,7 +181,7 @@ At the core of R is the idea of doing calculations on entire vectors.
 ```{r}
 gdpTotal <- gapminder$gdpPercap * gapminder$pop
 
-tmp <- gdpTotal[gapminder$year == "2007"]  # let's pick apart what is happening here
+tmp <- gdpTotal[gapminder$year == 2007]  # let's pick apart what is happening here
 gdpSubset <- tmp[1:20]
 
 gdpSubset >= 1e6  # Dr. Evil's version of "a lot"
