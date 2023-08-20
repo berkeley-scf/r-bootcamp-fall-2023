@@ -202,7 +202,7 @@ gapminder %>% filter(year == 2007) %>%
 
 * Base graphics/lattice and `ggplot2` have one big difference: `ggplot2` **requires** your data to be in tidy format. For base graphics, it can actually be helpful *not* to have your data in tidy format.
 
-For example, here ggplot treats `country` as an aesthetic parameter that differentiates groups of values, whereas base graphics treats each (year, medal) pair as a set of inputs to the plot.
+For example, here ggplot treats `country` as an aesthetic parameter that differentiates groups of values.
 
 Here's ggplot with the data in a tidy format.
 
@@ -226,7 +226,7 @@ plot(gapminder_wide$year, gapminder_wide$China, col = 'red', type = 'l', ylim = 
 lines(gapminder_wide$year, gapminder_wide$Turkey, col = 'green')
 lines(gapminder_wide$year, gapminder_wide$Italy, col = 'blue')
 legend("right", legend = c("China", "Turkey", "Italy"),
-                fill = c("red", "blue", "green"))
+                fill = c("red", "green", "blue"))
 ```
 
 Of course, as mentioned above, you can always filter your tidy data to replicate this plot with `ggplot2`... 
@@ -439,7 +439,7 @@ As seen in the code snippets in the quick quiz, one can put `aes()` in the origi
 
 If one puts `aes()` in `ggplot()`, it affects all subsequent calls that are part of the same ggplot expression.
 
-If one puts `aes(0` in a `geom_x()`, it affects only that particular component of the plotting.
+If one puts `aes()` in a `geom_x()`, it affects only that particular component of the plotting.
 
 So where you put it affects the "scope" of what it affects.
 
